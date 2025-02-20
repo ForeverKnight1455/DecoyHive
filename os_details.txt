@@ -1,2 +1,0 @@
-Operating System: Linux
-Version: Kali GNU/Linux 2024.4
