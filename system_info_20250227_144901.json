@@ -1,0 +1,180 @@
+{
+    "os_info": {
+        "system": "Linux",
+        "distribution": "EndeavourOS latest",
+        "kernel": "6.11.5-arch1-1.1-g14",
+        "architecture": "x86_64",
+        "processor": ""
+    },
+    "cpu_info": {
+        "physical_cores": 4,
+        "total_cores": 8,
+        "max_frequency": "2300.00MHz",
+        "current_frequency": "3392.27MHz",
+        "cpu_usage_per_core": [
+            "0.0%",
+            "0.0%",
+            "100.0%",
+            "0.0%",
+            "0.0%",
+            "0.0%",
+            "0.0%",
+            "0.0%"
+        ],
+        "total_cpu_usage": "20.0%"
+    },
+    "memory_info": {
+        "total": "13.59GB",
+        "available": "5.80GB",
+        "used": "4.42GB",
+        "percentage": "57.3%"
+    },
+    "disk_info": {
+        "/": {
+            "device": "/dev/nvme0n1p7",
+            "filesystem": "ext4",
+            "total": "95.56GB",
+            "used": "58.70GB",
+            "free": "31.97GB",
+            "percentage": "64.7%"
+        },
+        "/home": {
+            "device": "/dev/nvme0n1p8",
+            "filesystem": "ext4",
+            "total": "191.69GB",
+            "used": "158.18GB",
+            "free": "23.72GB",
+            "percentage": "87.0%"
+        },
+        "/boot/efi": {
+            "device": "/dev/nvme0n1p6",
+            "filesystem": "vfat",
+            "total": "0.49GB",
+            "used": "0.00GB",
+            "free": "0.49GB",
+            "percentage": "0.1%"
+        },
+        "/mnt/iamspeed": {
+            "device": "/dev/nvme0n1p5",
+            "filesystem": "exfat",
+            "total": "294.30GB",
+            "used": "46.49GB",
+            "free": "247.80GB",
+            "percentage": "15.8%"
+        },
+        "/mnt/data": {
+            "device": "/dev/sda1",
+            "filesystem": "fuseblk",
+            "total": "931.37GB",
+            "used": "709.37GB",
+            "free": "222.00GB",
+            "percentage": "76.2%"
+        }
+    },
+    "network_info": {
+        "lo": [
+            {
+                "address": "127.0.0.1",
+                "netmask": "255.0.0.0",
+                "family": "2"
+            },
+            {
+                "address": "::1",
+                "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+                "family": "10"
+            },
+            {
+                "address": "00:00:00:00:00:00",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "wlan0": [
+            {
+                "address": "175.20.1.5",
+                "netmask": "255.255.252.0",
+                "family": "2"
+            },
+            {
+                "address": "fe80::e24:e3a2:3518:1fc6%wlan0",
+                "netmask": "ffff:ffff:ffff:ffff::",
+                "family": "10"
+            },
+            {
+                "address": "d8:c0:a6:0f:4c:77",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "br-3e509395905c": [
+            {
+                "address": "172.22.0.1",
+                "netmask": "255.255.0.0",
+                "family": "2"
+            },
+            {
+                "address": "02:42:57:60:e6:09",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "docker0": [
+            {
+                "address": "172.17.0.1",
+                "netmask": "255.255.0.0",
+                "family": "2"
+            },
+            {
+                "address": "02:42:2c:6c:89:59",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "br-94ef4f0c1975": [
+            {
+                "address": "172.18.0.1",
+                "netmask": "255.255.0.0",
+                "family": "2"
+            },
+            {
+                "address": "02:42:c1:9f:d5:a0",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "br-bd818f18ebd8": [
+            {
+                "address": "172.19.0.1",
+                "netmask": "255.255.0.0",
+                "family": "2"
+            },
+            {
+                "address": "02:42:95:33:0c:32",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "br-f0c11f0b1a2a": [
+            {
+                "address": "172.20.0.1",
+                "netmask": "255.255.0.0",
+                "family": "2"
+            },
+            {
+                "address": "02:42:25:9b:78:f7",
+                "netmask": null,
+                "family": "17"
+            }
+        ],
+        "enp2s0": [
+            {
+                "address": "d4:5d:64:65:e0:60",
+                "netmask": null,
+                "family": "17"
+            }
+        ]
+    },
+    "installed_packages": {
+        "dpkg": []
+    }
+}
