@@ -129,8 +129,9 @@ def get_installed_software():
 if __name__ == "__main__":
     software_list = get_installed_software()
 
-    # Print software list
-    # if isinstance(software_list, dict):
-    #     print(json.dumps(software_list, indent=2))
-    # else:
-    #     #print(software_list)
+
+
+    if isinstance(software_list, dict):
+        print(json.dumps(software_list, indent=2))
+    else:
+        print(software_list)
