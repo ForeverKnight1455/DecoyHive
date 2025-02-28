@@ -19,14 +19,10 @@ DecoyHive is a honeypot generator toolkit designed to analyze a target system an
 
 ### Clone the Repository
 ```sh
-git clone https://github.com/vaishakhsnair/DecoyHive.git
+git clone https://github.com/ForeverKnight1455/DecoyHive.git
 cd DecoyHive
 ```
 
-### Install Dependencies
-```sh
-pip install -r requirements.txt
-```
 
 ## Usage
 ### Running the Analyzer
@@ -36,11 +32,6 @@ python analyzer/__main__.py
 ```
 This will create `config_exports/config.json`, which is used for generating the honeypot.
 
-### Deploying the Honeypot
-The honeypot generator (yet to be implemented) will use `config.json` to set up the decoy environment.
-```sh
-python generator/__main__.py --config config_exports/config.json
-```
 
 ## Project Structure
 ```
