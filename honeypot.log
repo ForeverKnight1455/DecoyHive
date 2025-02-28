@@ -1,0 +1,131 @@
+2025-02-28 13:19:56,846 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,848 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,850 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,851 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,853 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,854 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,856 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,857 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,859 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:19:56,860 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 13:19:56,861 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-02-28 13:19:56,867 - ERROR - Command 'iptables -L' failed: Command '['iptables', '-L']' returned non-zero exit status 4.
+2025-02-28 13:19:56,870 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-02-28 13:19:56,870 - INFO - Detected OS: Linux
+2025-02-28 13:19:56,870 - INFO - Detecting Debian-based software...
+2025-02-28 13:19:56,875 - INFO - Detecting Arch-based software...
+2025-02-28 13:19:56,902 - ERROR - Command not found: ['crontab', '-l']
+2025-02-28 13:19:56,903 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-02-28 13:19:56,904 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-02-28 13:19:56,906 - INFO - Saving config to file
+2025-02-28 13:22:32,920 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,922 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,923 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,925 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,926 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,927 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,928 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 13:22:32,929 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,931 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,932 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 13:22:32,933 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-02-28 13:22:32,939 - ERROR - Command 'iptables -L' failed: Command '['iptables', '-L']' returned non-zero exit status 4.
+2025-02-28 13:22:32,942 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-02-28 13:22:32,943 - INFO - Detected OS: Linux
+2025-02-28 13:22:32,943 - INFO - Detecting Debian-based software...
+2025-02-28 13:22:32,946 - INFO - Detecting Arch-based software...
+2025-02-28 13:22:32,969 - ERROR - Command not found: ['crontab', '-l']
+2025-02-28 13:22:32,970 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-02-28 13:22:32,971 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-02-28 13:22:32,973 - INFO - Saving config to file
+2025-02-28 14:25:47,480 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,481 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,483 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,484 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,486 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,486 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 14:25:47,487 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,489 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,490 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,491 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,493 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-02-28 14:25:47,499 - ERROR - Command 'iptables -L' failed: Command '['iptables', '-L']' returned non-zero exit status 4.
+2025-02-28 14:25:47,502 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-02-28 14:25:47,502 - INFO - Detected OS: Linux
+2025-02-28 14:25:47,502 - INFO - Detecting Debian-based software...
+2025-02-28 14:25:47,505 - INFO - Detecting Arch-based software...
+2025-02-28 14:25:47,574 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,575 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,577 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,578 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,579 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,580 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 14:25:47,581 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,582 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,584 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,586 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:25:47,592 - ERROR - Command not found: ['crontab', '-l']
+2025-02-28 14:25:47,594 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-02-28 14:25:47,595 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-02-28 14:25:47,597 - INFO - Saving config to file
+2025-02-28 14:28:04,815 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,815 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 14:28:04,817 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,817 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:28:04,818 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,819 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,821 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,822 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,824 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,825 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,825 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:28:04,827 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,828 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-02-28 14:28:04,834 - ERROR - Command 'iptables -L' failed: Command '['iptables', '-L']' returned non-zero exit status 4.
+2025-02-28 14:28:04,837 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-02-28 14:28:04,837 - INFO - Detected OS: Linux
+2025-02-28 14:28:04,837 - INFO - Detecting Debian-based software...
+2025-02-28 14:28:04,840 - INFO - Detecting Arch-based software...
+2025-02-28 14:28:04,910 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,910 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 14:28:04,912 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,912 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:28:04,913 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,914 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,916 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,917 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,918 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,920 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,920 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:28:04,922 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:28:04,928 - ERROR - Command not found: ['crontab', '-l']
+2025-02-28 14:28:04,929 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-02-28 14:28:04,931 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-02-28 14:28:04,933 - INFO - Saving config to file
+2025-02-28 14:29:25,210 - INFO - Detected OS: Linux
+2025-02-28 14:29:25,210 - INFO - Detecting Debian-based software...
+2025-02-28 14:29:25,214 - INFO - Detecting Arch-based software...
+2025-02-28 14:29:25,290 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,291 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 14:29:25,292 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,293 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,295 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,296 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,297 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,299 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,299 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:29:25,299 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:29:25,300 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:25,301 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,424 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,425 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-02-28 14:29:38,426 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,427 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,428 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,430 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,431 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,433 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,433 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:29:38,433 - INFO - Detected service: ssh on port 22, process: python3
+2025-02-28 14:29:38,434 - WARNING - Error fetching service info: port/proto not found
+2025-02-28 14:29:38,436 - WARNING - Error fetching service info: port/proto not found
