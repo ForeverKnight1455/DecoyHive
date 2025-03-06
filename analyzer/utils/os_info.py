@@ -8,4 +8,5 @@ def get_os_info():
         "os_version": platform.release(),
         "os_architecture": platform.machine(),
         "kernel_version": platform.version(),
+        #This is trojan
     }
