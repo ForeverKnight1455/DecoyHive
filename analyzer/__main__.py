@@ -2,7 +2,7 @@ import json
 import logging
 import os
 
-from utils import get_os_info, get_hardware_info, get_running_services, get_network_info, get_user_info, get_filtered_software_from_running_services, get_environment_variables, get_cron_jobs, get_log_files
+from utils import get_os_info, get_hardware_info, get_running_services, get_network_info, get_user_info, get_filtered_software_from_running_services, get_environment_variables, get_cron_jobs, get_log_files,generate_dockerfile
 
 # Load configuration from settings.json
 def load_config():
@@ -65,3 +65,4 @@ def save_config():
 
 if __name__ == "__main__":
     save_config()
+    generate_dockerfile("./config_exports/config.json")
