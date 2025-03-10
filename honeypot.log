@@ -2013,3 +2013,957 @@
 2025-03-07 00:23:40,727 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
 2025-03-07 00:23:40,728 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
 2025-03-07 00:23:40,732 - INFO - Saving config to file
+2025-03-08 17:11:44,799 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,800 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,801 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,802 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,803 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,803 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,804 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,805 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,806 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:11:44,806 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,807 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,808 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,809 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,810 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,811 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,811 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:44,817 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:11:44,817 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:11:44,818 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,819 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,819 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,820 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,820 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:44,821 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,822 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,823 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,823 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,824 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,825 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,826 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,827 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,827 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,828 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,829 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,830 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:11:44,831 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,836 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:11:44,837 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,837 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:11:44,838 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,839 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,840 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,841 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,841 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,842 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:44,843 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,843 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,844 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,845 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,845 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:44,846 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:44,873 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 17:11:45,024 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 17:11:45,026 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 17:11:45,028 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 17:11:45,031 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 17:11:45,033 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 17:11:45,088 - INFO - Detected OS: Windows
+2025-03-08 17:11:45,088 - INFO - Detecting Windows software...
+2025-03-08 17:11:45,090 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,091 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,092 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,093 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,094 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,094 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,095 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,096 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,096 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:11:45,097 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,098 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,099 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,099 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,100 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,101 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,101 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:45,106 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:11:45,107 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:11:45,109 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,110 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,111 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,111 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,112 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:45,112 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,113 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,114 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,115 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,116 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,116 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,117 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,118 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,119 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,119 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,120 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,121 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:11:45,122 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,128 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:11:45,129 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,129 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:11:45,130 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,131 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,132 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,132 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,133 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,134 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:45,134 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,135 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,136 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,137 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,137 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:11:45,138 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:11:45,177 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 17:11:45,179 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 17:11:45,182 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 17:11:45,184 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 17:11:45,184 - INFO - Saving config to file
+2025-03-08 17:13:40,025 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,026 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,027 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,027 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:13:40,028 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,034 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:13:40,035 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,036 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,036 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,037 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,038 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,039 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,039 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,040 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,041 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,042 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,042 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,043 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,044 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,045 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,046 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,046 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,047 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:13:40,048 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,048 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,049 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,050 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,051 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:13:40,051 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,052 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,053 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,053 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,054 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,055 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,056 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,056 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,057 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,058 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,058 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,059 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,065 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:13:40,066 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,067 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:13:40,067 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,068 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,069 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,070 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,070 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,071 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,072 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,073 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,074 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,086 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 17:13:40,245 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 17:13:40,247 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 17:13:40,249 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 17:13:40,251 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 17:13:40,253 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 17:13:40,305 - INFO - Detected OS: Windows
+2025-03-08 17:13:40,305 - INFO - Detecting Windows software...
+2025-03-08 17:13:40,306 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,307 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,308 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,309 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:13:40,309 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,315 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:13:40,316 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,317 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,318 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,318 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,319 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,320 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,320 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,321 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,322 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,323 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,324 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,325 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,326 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,326 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,327 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,328 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,329 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:13:40,330 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,331 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,332 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,332 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,333 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:13:40,334 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,335 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,335 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,336 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,337 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,337 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,338 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,339 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,340 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,341 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,341 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:13:40,342 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,351 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:13:40,352 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,353 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:13:40,354 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,355 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,356 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,357 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,358 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,358 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,359 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,360 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,361 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:13:40,400 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 17:13:40,402 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 17:13:40,404 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 17:13:40,406 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 17:13:40,407 - INFO - Saving config to file
+2025-03-08 17:18:24,395 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,396 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,396 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,397 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,398 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,399 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,400 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,400 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:18:24,401 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,402 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,403 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,403 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,404 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,405 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,406 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,406 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,411 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:18:24,412 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,413 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,414 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,415 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,415 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,416 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,417 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,418 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,419 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,419 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,420 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,421 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:18:24,421 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,422 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,423 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,424 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,425 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,425 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,431 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:18:24,431 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:18:24,432 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,433 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,434 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,434 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,435 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:18:24,435 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,436 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,437 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,437 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,438 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,439 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,440 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,440 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,441 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,441 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,454 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 17:18:24,591 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 17:18:24,593 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 17:18:24,595 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 17:18:24,597 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 17:18:24,598 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 17:18:24,655 - INFO - Detected OS: Windows
+2025-03-08 17:18:24,655 - INFO - Detecting Windows software...
+2025-03-08 17:18:24,657 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,658 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,659 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,659 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,660 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,661 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,662 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,662 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:18:24,663 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,664 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,665 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,666 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,667 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,667 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,668 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,669 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,674 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:18:24,675 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,676 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,677 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,677 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,678 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,679 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,680 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,680 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,681 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,682 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,683 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,684 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:18:24,684 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,685 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,686 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,687 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,687 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,688 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,695 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:18:24,695 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:18:24,696 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,697 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,697 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,698 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,699 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:18:24,699 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,700 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,701 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,701 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,702 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,703 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,704 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,704 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,705 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:18:24,705 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:18:24,742 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 17:18:24,744 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 17:18:24,746 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 17:18:24,749 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 17:18:24,749 - INFO - Saving config to file
+2025-03-08 17:20:51,068 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,069 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,069 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,070 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,071 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,071 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,072 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,073 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,079 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:20:51,080 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:20:51,081 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,081 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,082 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:20:51,083 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,083 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,084 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,085 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,086 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,087 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,087 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,088 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,089 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,090 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,091 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,091 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,092 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,092 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,093 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,093 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,094 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,095 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,096 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,097 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,097 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,098 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,099 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,100 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,100 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,101 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,102 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,103 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,104 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,110 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:20:51,111 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,111 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,112 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,113 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,113 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,114 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,115 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:20:51,115 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:20:51,116 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,131 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 17:20:51,273 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 17:20:51,275 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 17:20:51,277 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 17:20:51,280 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 17:20:51,282 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 17:20:51,379 - INFO - Detected OS: Windows
+2025-03-08 17:20:51,379 - INFO - Detecting Windows software...
+2025-03-08 17:20:51,382 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,383 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,383 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,384 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,384 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,385 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,386 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,387 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,393 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:20:51,394 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:20:51,395 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,396 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,396 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:20:51,397 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,398 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,399 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,399 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,400 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,401 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,402 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,403 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,404 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,405 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,406 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,406 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,407 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,408 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,409 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,409 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,410 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,411 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,411 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,412 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,413 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,414 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,414 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,415 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,416 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,417 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,418 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,418 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,419 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,425 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:20:51,426 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,427 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,428 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,428 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:20:51,429 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,430 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,431 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:20:51,431 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:20:51,432 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:20:51,469 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 17:20:51,471 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 17:20:51,473 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 17:20:51,476 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 17:20:51,476 - INFO - Saving config to file
+2025-03-08 17:23:21,266 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,267 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,268 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,269 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:23:21,270 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,271 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,271 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,272 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,272 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,273 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,274 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,275 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,276 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,276 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,277 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,278 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,284 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:23:21,285 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,285 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,286 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,287 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,288 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,288 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,289 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,290 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,290 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,291 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,292 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,293 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,294 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,294 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,295 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,296 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:23:21,296 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,297 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,297 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,298 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,299 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,300 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:23:21,301 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,301 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,302 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,302 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,303 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,309 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:23:21,310 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:23:21,310 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,311 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,312 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,313 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,313 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,314 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,338 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 17:23:21,485 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 17:23:21,487 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 17:23:21,490 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 17:23:21,492 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 17:23:21,495 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 17:23:21,545 - INFO - Detected OS: Windows
+2025-03-08 17:23:21,545 - INFO - Detecting Windows software...
+2025-03-08 17:23:21,547 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,548 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,549 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,550 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:23:21,551 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,552 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,552 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,553 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,553 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,554 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,555 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,556 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,556 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,557 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,558 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,559 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,567 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:23:21,568 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,569 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,570 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,570 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,571 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,572 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,572 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,573 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,574 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,575 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,576 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,577 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,577 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,578 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,580 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,581 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:23:21,582 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,584 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,586 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,588 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,588 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,589 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:23:21,590 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,591 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,591 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:23:21,592 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,593 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,600 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:23:21,601 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:23:21,601 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,602 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,603 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,604 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,604 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,605 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:23:21,644 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 17:23:21,646 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 17:23:21,647 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 17:23:21,649 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 17:23:21,650 - INFO - Saving config to file
+2025-03-08 17:35:06,316 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,317 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,324 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:35:06,325 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,326 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,327 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,328 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,329 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,329 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,330 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,331 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,332 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,332 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,333 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,334 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,335 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,336 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,337 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,338 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:35:06,343 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:35:06,344 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,345 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,346 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,346 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:35:06,347 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,348 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,349 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,350 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,350 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,351 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,352 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,353 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,354 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,355 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,356 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,356 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,357 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,358 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,358 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,359 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,360 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,360 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,360 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,361 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,362 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,363 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:35:06,363 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,364 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:35:06,365 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,366 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,367 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,367 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,382 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 17:35:06,547 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 17:35:06,549 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 17:35:06,551 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 17:35:06,553 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 17:35:06,555 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 17:35:06,659 - INFO - Detected OS: Windows
+2025-03-08 17:35:06,659 - INFO - Detecting Windows software...
+2025-03-08 17:35:06,661 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,662 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,668 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:35:06,669 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,670 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,670 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,671 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,672 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,673 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,673 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,674 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,675 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,675 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,676 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,677 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,677 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,678 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,679 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,679 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:35:06,685 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 17:35:06,686 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,687 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,688 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,688 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 17:35:06,689 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,689 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,690 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,691 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,692 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,692 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,693 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,694 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,695 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,696 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,696 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,697 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,698 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,699 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,699 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,700 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,701 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,701 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,701 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 17:35:06,702 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,703 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,703 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:35:06,704 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,705 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 17:35:06,706 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,706 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,707 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,708 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 17:35:06,744 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 17:35:06,746 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 17:35:06,747 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 17:35:06,749 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 17:35:06,750 - INFO - Saving config to file
+2025-03-08 18:11:22,372 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,374 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,375 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,375 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,376 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,377 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,378 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,378 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:11:22,389 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:11:22,390 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:11:22,391 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,392 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,393 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,394 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,395 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,395 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:11:22,396 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,397 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,398 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,399 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,400 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,400 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,401 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,402 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,403 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,404 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,404 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,405 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,406 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,407 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,408 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,408 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,409 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,410 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,411 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,412 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,412 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:11:22,413 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,414 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,435 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:11:22,436 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,436 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,437 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,437 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,438 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,440 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,440 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,441 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,442 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,443 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,444 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,457 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 18:11:22,597 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 18:11:22,599 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 18:11:22,601 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 18:11:22,603 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 18:11:22,605 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 18:11:22,647 - INFO - Detected OS: Windows
+2025-03-08 18:11:22,647 - INFO - Detecting Windows software...
+2025-03-08 18:11:22,649 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,650 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,651 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,652 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,653 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,653 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,654 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,655 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:11:22,662 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:11:22,663 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:11:22,663 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,664 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,665 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,666 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,667 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,667 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:11:22,668 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,669 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,669 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,670 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,671 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,671 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,672 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,672 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,673 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,674 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,675 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,676 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,676 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,677 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,677 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,678 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,679 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,680 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,680 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,681 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,682 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:11:22,683 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,683 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,690 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:11:22,691 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,692 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,692 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,693 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:11:22,693 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,694 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,695 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,696 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,697 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,698 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,698 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:11:22,738 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 18:11:22,740 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 18:11:22,742 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 18:11:22,745 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 18:11:22,745 - INFO - Saving config to file
+2025-03-08 18:18:01,432 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,433 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,434 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,440 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:18:01,441 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,442 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,442 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,443 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,444 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,445 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,446 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,446 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,447 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,448 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,448 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,449 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:18:01,449 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,450 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,450 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,451 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,452 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,453 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:18:01,454 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,454 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,455 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,456 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:18:01,457 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,458 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,458 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,459 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,459 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,460 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:18:01,460 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,462 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,463 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,464 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,464 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,465 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,466 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,467 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,468 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,469 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,469 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,470 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,471 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,472 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,473 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,474 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,481 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:18:01,482 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,483 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,500 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 1.
+2025-03-08 18:18:01,646 - ERROR - Command not found: ['cat', '/etc/resolv.conf']
+2025-03-08 18:18:01,648 - ERROR - Command not found: ['iptables', '-L']
+2025-03-08 18:18:01,650 - ERROR - Command not found: ['cat', '/etc/passwd']
+2025-03-08 18:18:01,652 - ERROR - Command not found: ['cat', '/etc/group']
+2025-03-08 18:18:01,654 - ERROR - Command not found: ['cat', '/etc/sudoers']
+2025-03-08 18:18:01,713 - INFO - Detected OS: Windows
+2025-03-08 18:18:01,713 - INFO - Detecting Windows software...
+2025-03-08 18:18:01,716 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,716 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,717 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,724 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:18:01,725 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,726 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,727 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,728 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,728 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,729 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,730 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,731 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,731 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,733 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,733 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,733 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:18:01,734 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,735 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,735 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,735 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,736 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,738 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:18:01,738 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,739 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,740 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,741 - INFO - Detected service: wsd on port 5357, process: System
+2025-03-08 18:18:01,741 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,742 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,743 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,744 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,744 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,744 - INFO - Detected service: microsoft-ds on port 445, process: System
+2025-03-08 18:18:01,745 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,746 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,747 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,747 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,748 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,749 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,750 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,750 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,751 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,752 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,753 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,753 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,754 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,755 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,756 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,757 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,762 - INFO - Detected service: epmap on port 135, process: svchost.exe
+2025-03-08 18:18:01,763 - WARNING - Error fetching service info: port/proto not found
+2025-03-08 18:18:01,764 - INFO - Detected service: netbios-ssn on port 139, process: System
+2025-03-08 18:18:01,800 - ERROR - Command not found: ['crontab', '-l']
+2025-03-08 18:18:01,802 - ERROR - Command not found: ['cat', '/var/log/syslog']
+2025-03-08 18:18:01,804 - ERROR - Command not found: ['cat', '/var/log/auth.log']
+2025-03-08 18:18:01,806 - ERROR - Command not found: ['ls', '/var/log']
+2025-03-08 18:18:01,807 - INFO - Saving config to file
+2025-03-09 09:43:38,788 - ERROR - Command not found: ['iptables', '-L']
+2025-03-09 09:43:38,792 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-03-09 09:43:38,793 - INFO - Detected OS: Linux
+2025-03-09 09:43:38,793 - INFO - Detecting Debian-based software...
+2025-03-09 09:43:38,830 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-09 09:43:38,831 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-09 09:43:38,833 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-09 09:43:38,836 - INFO - Saving config to file
+2025-03-09 10:05:54,318 - ERROR - Command not found: ['iptables', '-L']
+2025-03-09 10:05:54,322 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-03-09 10:05:54,323 - INFO - Detected OS: Linux
+2025-03-09 10:05:54,323 - INFO - Detecting Debian-based software...
+2025-03-09 10:05:54,369 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-09 10:05:54,372 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-09 10:05:54,375 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-09 10:05:54,382 - INFO - Saving config to file
+2025-03-09 10:07:18,586 - ERROR - Command not found: ['iptables', '-L']
+2025-03-09 10:07:18,591 - ERROR - Command 'cat /etc/sudoers' failed: Command '['cat', '/etc/sudoers']' returned non-zero exit status 1.
+2025-03-09 10:07:18,591 - INFO - Detected OS: Linux
+2025-03-09 10:07:18,591 - INFO - Detecting Debian-based software...
+2025-03-09 10:07:18,623 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-09 10:07:18,624 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-09 10:07:18,626 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-09 10:07:18,629 - INFO - Saving config to file
