@@ -6,6 +6,7 @@ import platform
 import os
 
 # Configure logging
+os_name=platform.system()
 logging.basicConfig(
     filename='honeypot.log',
     level=logging.INFO,
@@ -56,20 +57,30 @@ def run_command(command):
 
 def get_network_info():
     """Collect network configuration information."""
-    return {
-        "ip_address": run_command(["hostname", "-I"]),
-        "routing_table": run_command(["netstat", "-r"]),
-        "dns_servers": run_command(["cat", "/etc/resolv.conf"]),
-        "firewall_rules": run_command(["iptables", "-L"])
-    }
+    if os_name=="Linux":
+        return {
+            "ip_address": run_command(["hostname", "-I"]),
+            "routing_table": run_command(["netstat", "-r"]),
+            "dns_servers": run_command(["cat", "/etc/resolv.conf"]),
+            "firewall_rules": run_command(["iptables", "-L"])
+        }
+    elif os_name=="Windows":
+        return{
+
+        }
 
 def get_user_info():
     """Collect user and permission information."""
-    return {
-        "users": run_command(["cat", "/etc/passwd"]),
-        "groups": run_command(["cat", "/etc/group"]),
-        "sudoers": run_command(["cat", "/etc/sudoers"])
-    }
+    if os_name=="Linux":
+        return {
+            "users": run_command(["cat", "/etc/passwd"]),
+            "groups": run_command(["cat", "/etc/group"]),
+            "sudoers": run_command(["cat", "/etc/sudoers"])
+        }
+    elif os_name=="Windows":
+        return {
+
+        }
 
 def get_environment_variables():
     """Collect environment variables."""
@@ -84,19 +95,27 @@ def get_environment_variables():
 
 def get_cron_jobs():
     """Collect cron jobs and scheduled tasks."""
-    try:
-        return {"cron_jobs": run_command(["crontab", "-l"])}
-    except Exception as e:
-        logging.error(f"Error collecting cron jobs: {e}")
-        return {"cron_jobs": []}
+    if os_name=="Linux":
+        try:
+            return {"cron_jobs": run_command(["crontab", "-l"])}
+        except Exception as e:
+            logging.error(f"Error collecting cron jobs: {e}")
+            return {"cron_jobs": []}
+    elif os_name=="Windows":
+        return 
 
 def get_log_files():
     """Collect system logs."""
-    return {
-        "syslog": run_command(["cat", "/var/log/syslog"]),
-        "auth_log": run_command(["cat", "/var/log/auth.log"]),
-        "application_logs": run_command(["ls", "/var/log"])
-    }
+    if os_name=="Linux":
+        return {
+            "syslog": run_command(["cat", "/var/log/syslog"]),
+            "auth_log": run_command(["cat", "/var/log/auth.log"]),
+            "application_logs": run_command(["ls", "/var/log"])
+        }
+    elif os_name=="Windows":
+        return{
+
+        }
 
 def get_installed_software_linux():
     """Get a list of installed software on Linux using the appropriate package manager."""
