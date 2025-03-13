@@ -87,7 +87,6 @@ def get_environment_variables():
     try:
         return {
             "system_env": dict(os.environ),
-            "user_env": dict(os.environ)
         }
     except Exception as e:
         logging.error(f"Error retrieving environment variables: {e}")

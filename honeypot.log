@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-03-13 14:04:38,425 - WARNING - Error fetching service info: port/proto not found
 2025-03-13 14:04:38,426 - WARNING - Error fetching service info: port/proto not found
 2025-03-13 14:04:38,426 - WARNING - Error fetching service info: port/proto not found
@@ -369,3 +370,178 @@
 2025-03-13 14:16:08,503 - WARNING - Error fetching service info: port/proto not found
 2025-03-13 14:16:08,504 - WARNING - Error fetching service info: port/proto not found
 2025-03-13 14:16:08,538 - INFO - Saving config to file
+=======
+2025-03-13 14:15:19,449 - ERROR - Nmap scan failed: Command '['nmap', '-sS', '-sV', '-p-', '127.0.0.1']' returned non-zero exit status 1.
+2025-03-13 14:16:33,530 - INFO - Running Nmap scan: sudo nmap -Pn -sV -p- 127.0.0.1
+2025-03-13 14:19:02,175 - INFO - Running Nmap scan: sudo nmap -Pn -sV -p- -vv 127.0.0.1
+2025-03-13 14:20:57,812 - INFO - Running Nmap scan: sudo nmap -Pn -sV -p- -vv 127.0.0.1
+2025-03-13 14:20:57,860 - INFO - Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-13 14:20 IST
+2025-03-13 14:20:57,969 - INFO - NSE: Loaded 47 scripts for scanning.
+2025-03-13 14:20:57,970 - INFO - Initiating SYN Stealth Scan at 14:20
+2025-03-13 14:20:57,998 - INFO - Scanning localhost (127.0.0.1) [65535 ports]
+2025-03-13 14:20:57,998 - INFO - Discovered open port 80/tcp on 127.0.0.1
+2025-03-13 14:20:58,193 - INFO - Discovered open port 8000/tcp on 127.0.0.1
+2025-03-13 14:20:58,266 - INFO - Discovered open port 1716/tcp on 127.0.0.1
+2025-03-13 14:20:58,290 - INFO - Discovered open port 46105/tcp on 127.0.0.1
+2025-03-13 14:20:58,637 - INFO - Discovered open port 44257/tcp on 127.0.0.1
+2025-03-13 14:20:58,913 - INFO - Discovered open port 11434/tcp on 127.0.0.1
+2025-03-13 14:20:58,938 - INFO - Completed SYN Stealth Scan at 14:20, 0.97s elapsed (65535 total ports)
+2025-03-13 14:20:59,057 - INFO - Initiating Service scan at 14:20
+2025-03-13 14:23:35,188 - INFO - Scanning 6 services on localhost (127.0.0.1)
+2025-03-13 14:23:35,188 - INFO - Completed Service scan at 14:23, 156.13s elapsed (6 services on 1 host)
+2025-03-13 14:23:35,188 - INFO - NSE: Script scanning 127.0.0.1.
+2025-03-13 14:23:35,188 - INFO - NSE: Starting runlevel 1 (of 2) scan.
+2025-03-13 14:23:35,188 - INFO - Initiating NSE at 14:23
+2025-03-13 14:23:42,236 - INFO - Completed NSE at 14:23, 7.05s elapsed
+2025-03-13 14:23:42,236 - INFO - NSE: Starting runlevel 2 (of 2) scan.
+2025-03-13 14:23:42,236 - INFO - Initiating NSE at 14:23
+2025-03-13 14:23:43,250 - INFO - Completed NSE at 14:23, 1.01s elapsed
+2025-03-13 14:23:43,251 - INFO - Nmap scan report for localhost (127.0.0.1)
+2025-03-13 14:23:43,265 - INFO - Host is up, received user-set (0.0000070s latency).
+2025-03-13 14:23:43,265 - INFO - Scanned at 2025-03-13 14:20:57 IST for 166s
+2025-03-13 14:23:43,265 - INFO - Not shown: 65529 closed tcp ports (reset)
+2025-03-13 14:23:43,265 - INFO - PORT      STATE SERVICE    REASON         VERSION
+2025-03-13 14:23:43,265 - INFO - 80/tcp    open  http       syn-ack ttl 64 nginx 1.26.3
+2025-03-13 14:23:43,265 - INFO - 1716/tcp  open  tcpwrapped syn-ack ttl 64
+2025-03-13 14:23:43,265 - INFO - 8000/tcp  open  http       syn-ack ttl 64 Uvicorn
+2025-03-13 14:23:43,266 - INFO - 11434/tcp open  http       syn-ack ttl 64 Golang net/http server
+2025-03-13 14:23:43,266 - INFO - 44257/tcp open  http       syn-ack ttl 64 Golang net/http server
+2025-03-13 14:23:43,266 - INFO - 46105/tcp open  unknown    syn-ack ttl 64
+2025-03-13 14:23:43,266 - INFO - 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+2025-03-13 14:23:43,266 - INFO - ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+2025-03-13 14:23:43,266 - INFO - SF-Port11434-TCP:V=7.95%I=7%D=3/13%Time=67D29C79%P=x86_64-pc-linux-gnu%r(G
+2025-03-13 14:23:43,266 - INFO - SF:enericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20
+2025-03-13 14:23:43,266 - INFO - SF:text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\
+2025-03-13 14:23:43,266 - INFO - SF:x20Request")%r(GetRequest,86,"HTTP/1\.0\x20200\x20OK\r\nContent-Type:\x
+2025-03-13 14:23:43,266 - INFO - SF:20text/plain;\x20charset=utf-8\r\nDate:\x20Thu,\x2013\x20Mar\x202025\x2
+2025-03-13 14:23:43,266 - INFO - SF:008:51:05\x20GMT\r\nContent-Length:\x2017\r\n\r\nOllama\x20is\x20runnin
+2025-03-13 14:23:43,266 - INFO - SF:g")%r(HTTPOptions,40,"HTTP/1\.0\x20204\x20No\x20Content\r\nDate:\x20Thu
+2025-03-13 14:23:43,266 - INFO - SF:,\x2013\x20Mar\x202025\x2008:51:05\x20GMT\r\n\r\n")%r(RTSPRequest,67,"H
+2025-03-13 14:23:43,266 - INFO - SF:TTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20ch
+2025-03-13 14:23:43,266 - INFO - SF:arset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(He
+2025-03-13 14:23:43,266 - INFO - SF:lp,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plai
+2025-03-13 14:23:43,267 - INFO - SF:n;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Reques
+2025-03-13 14:23:43,267 - INFO - SF:t")%r(SSLSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-T
+2025-03-13 14:23:43,267 - INFO - SF:ype:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400
+2025-03-13 14:23:43,267 - INFO - SF:\x20Bad\x20Request")%r(FourOhFourRequest,7F,"HTTP/1\.0\x20404\x20Not\x2
+2025-03-13 14:23:43,267 - INFO - SF:0Found\r\nContent-Type:\x20text/plain\r\nDate:\x20Thu,\x2013\x20Mar\x20
+2025-03-13 14:23:43,267 - INFO - SF:2025\x2008:51:20\x20GMT\r\nContent-Length:\x2018\r\n\r\n404\x20page\x20
+2025-03-13 14:23:43,267 - INFO - SF:not\x20found")%r(LPDString,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCo
+2025-03-13 14:23:43,267 - INFO - SF:ntent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n
+2025-03-13 14:23:43,267 - INFO - SF:\r\n400\x20Bad\x20Request")%r(SIPOptions,67,"HTTP/1\.1\x20400\x20Bad\x2
+2025-03-13 14:23:43,267 - INFO - SF:0Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection
+2025-03-13 14:23:43,267 - INFO - SF::\x20close\r\n\r\n400\x20Bad\x20Request")%r(Socks5,67,"HTTP/1\.1\x20400
+2025-03-13 14:23:43,267 - INFO - SF:\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n
+2025-03-13 14:23:43,267 - INFO - SF:Connection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(OfficeScan,A3,"HT
+2025-03-13 14:23:43,267 - INFO - SF:TP/1\.1\x20400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20hea
+2025-03-13 14:23:43,267 - INFO - SF:der\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20
+2025-03-13 14:23:43,267 - INFO - SF:close\r\n\r\n400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20h
+2025-03-13 14:23:43,267 - INFO - SF:eader");
+2025-03-13 14:23:43,268 - INFO - ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+2025-03-13 14:23:43,268 - INFO - SF-Port44257-TCP:V=7.95%I=7%D=3/13%Time=67D29C79%P=x86_64-pc-linux-gnu%r(G
+2025-03-13 14:23:43,268 - INFO - SF:enericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20
+2025-03-13 14:23:43,268 - INFO - SF:text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\
+2025-03-13 14:23:43,268 - INFO - SF:x20Request")%r(GetRequest,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:
+2025-03-13 14:23:43,268 - INFO - SF:\x20Thu,\x2013\x20Mar\x202025\x2008:51:05\x20GMT\r\nContent-Length:\x20
+2025-03-13 14:23:43,268 - INFO - SF:19\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page
+2025-03-13 14:23:43,268 - INFO - SF:\x20Not\x20Found")%r(HTTPOptions,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r
+2025-03-13 14:23:43,268 - INFO - SF:\nDate:\x20Thu,\x2013\x20Mar\x202025\x2008:51:05\x20GMT\r\nContent-Leng
+2025-03-13 14:23:43,268 - INFO - SF:th:\x2019\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\
+2025-03-13 14:23:43,268 - INFO - SF:x20Page\x20Not\x20Found")%r(RTSPRequest,67,"HTTP/1\.1\x20400\x20Bad\x20
+2025-03-13 14:23:43,268 - INFO - SF:Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:
+2025-03-13 14:23:43,268 - INFO - SF:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Help,67,"HTTP/1\.1\x20400\x2
+2025-03-13 14:23:43,268 - INFO - SF:0Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nCon
+2025-03-13 14:23:43,268 - INFO - SF:nection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLSessionReq,67,"HT
+2025-03-13 14:23:43,268 - INFO - SF:TP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20cha
+2025-03-13 14:23:43,268 - INFO - SF:rset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(Fou
+2025-03-13 14:23:43,268 - INFO - SF:rOhFourRequest,8F,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Thu,\x2
+2025-03-13 14:23:43,268 - INFO - SF:013\x20Mar\x202025\x2008:51:20\x20GMT\r\nContent-Length:\x2019\r\nConte
+2025-03-13 14:23:43,269 - INFO - SF:nt-Type:\x20text/plain;\x20charset=utf-8\r\n\r\n404:\x20Page\x20Not\x20
+2025-03-13 14:23:43,269 - INFO - SF:Found")%r(LPDString,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-T
+2025-03-13 14:23:43,269 - INFO - SF:ype:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400
+2025-03-13 14:23:43,269 - INFO - SF:\x20Bad\x20Request")%r(SIPOptions,67,"HTTP/1\.1\x20400\x20Bad\x20Reques
+2025-03-13 14:23:43,269 - INFO - SF:t\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20cl
+2025-03-13 14:23:43,269 - INFO - SF:ose\r\n\r\n400\x20Bad\x20Request")%r(Socks5,67,"HTTP/1\.1\x20400\x20Bad
+2025-03-13 14:23:43,269 - INFO - SF:\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnect
+2025-03-13 14:23:43,269 - INFO - SF:ion:\x20close\r\n\r\n400\x20Bad\x20Request")%r(OfficeScan,A3,"HTTP/1\.1
+2025-03-13 14:23:43,269 - INFO - SF:\x20400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20header\r\n
+2025-03-13 14:23:43,269 - INFO - SF:Content-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r
+2025-03-13 14:23:43,269 - INFO - SF:\n\r\n400\x20Bad\x20Request:\x20missing\x20required\x20Host\x20header");
+2025-03-13 14:23:43,269 - INFO - 
+2025-03-13 14:23:43,273 - INFO - Read data files from: /usr/bin/../share/nmap
+2025-03-13 14:23:43,273 - INFO - Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+2025-03-13 14:23:43,273 - INFO - Nmap done: 1 IP address (1 host up) scanned in 165.44 seconds
+2025-03-13 14:23:43,273 - INFO - Raw packets sent: 65535 (2.884MB) | Rcvd: 131076 (5.505MB)
+2025-03-13 14:23:43,348 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:23:43,393 - INFO - Detected service: tcpwrapped on port 1716, process: kdeconnectd
+2025-03-13 14:23:43,438 - INFO - Detected service: http on port 8000, process: com.docker.backend
+2025-03-13 14:23:43,482 - INFO - Detected service: http on port 11434, process: ollama
+2025-03-13 14:23:43,524 - INFO - Detected service: http on port 44257, process: containerd
+2025-03-13 14:23:43,565 - INFO - Detected service: unknown on port 46105, process: com.docker.backend
+2025-03-13 14:44:48,625 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-03-13 14:44:48,625 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:44:48,626 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:44:48,628 - INFO - Detected service: irdmi on port 8000, process: com.docker.backend
+2025-03-13 14:44:48,629 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:44:48,630 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-03-13 14:44:48,644 - INFO - Detected OS: Linux
+2025-03-13 14:44:48,644 - INFO - Detecting Debian-based software...
+2025-03-13 14:44:48,649 - INFO - Detecting Arch-based software...
+2025-03-13 14:44:48,731 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-03-13 14:44:48,731 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:44:48,732 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:44:48,733 - INFO - Detected service: irdmi on port 8000, process: com.docker.backend
+2025-03-13 14:44:48,735 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:44:48,745 - ERROR - Command not found: ['crontab', '-l']
+2025-03-13 14:44:48,747 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-13 14:44:48,748 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-13 14:44:48,750 - INFO - Saving config to file
+2025-03-13 14:45:14,556 - INFO - Detected service: irdmi on port 8000, process: com.docker.backend
+2025-03-13 14:45:14,556 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:45:14,556 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-03-13 14:45:14,557 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:45:14,559 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:45:14,560 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-03-13 14:45:14,570 - INFO - Detected OS: Linux
+2025-03-13 14:45:14,570 - INFO - Detecting Debian-based software...
+2025-03-13 14:45:14,573 - INFO - Detecting Arch-based software...
+2025-03-13 14:45:14,639 - INFO - Detected service: irdmi on port 8000, process: com.docker.backend
+2025-03-13 14:45:14,639 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:45:14,639 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-03-13 14:45:14,640 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:45:14,642 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:45:14,652 - ERROR - Command not found: ['crontab', '-l']
+2025-03-13 14:45:14,653 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-13 14:45:14,654 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-13 14:45:14,655 - INFO - Saving config to file
+2025-03-13 14:46:58,441 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:46:58,441 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:46:58,443 - INFO - Detected service: irdmi on port 8000, process: com.docker.backend
+2025-03-13 14:46:58,444 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-03-13 14:46:58,445 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:46:58,446 - ERROR - Command 'hostname -I' failed: Command '['hostname', '-I']' returned non-zero exit status 64.
+2025-03-13 14:46:58,459 - INFO - Detected OS: Linux
+2025-03-13 14:46:58,459 - INFO - Detecting Debian-based software...
+2025-03-13 14:46:58,463 - INFO - Detecting Arch-based software...
+2025-03-13 14:46:58,535 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:46:58,535 - INFO - Detected service: http on port 80, process: nginx
+2025-03-13 14:46:58,536 - INFO - Detected service: irdmi on port 8000, process: com.docker.backend
+2025-03-13 14:46:58,537 - INFO - Detected service: xmsg on port 1716, process: kdeconnectd
+2025-03-13 14:46:58,538 - WARNING - Error fetching service info: port/proto not found
+2025-03-13 14:46:58,549 - ERROR - Command not found: ['crontab', '-l']
+2025-03-13 14:46:58,550 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-13 14:46:58,551 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-13 14:46:58,553 - INFO - Saving config to file
+2025-03-13 14:47:10,979 - INFO - Running Nmap scan: sudo nmap -Pn -sV -p- -vv 127.0.0.1
+2025-03-13 14:47:11,036 - INFO - Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-13 14:47 IST
+2025-03-13 14:47:11,153 - INFO - NSE: Loaded 47 scripts for scanning.
+2025-03-13 14:47:11,153 - INFO - Initiating SYN Stealth Scan at 14:47
+2025-03-13 14:47:11,178 - INFO - Scanning localhost (127.0.0.1) [65535 ports]
+2025-03-13 14:47:11,179 - INFO - Discovered open port 80/tcp on 127.0.0.1
+2025-03-13 14:47:11,216 - INFO - Discovered open port 8000/tcp on 127.0.0.1
+2025-03-13 14:47:11,450 - INFO - Discovered open port 1716/tcp on 127.0.0.1
+2025-03-13 14:47:11,586 - INFO - Discovered open port 44257/tcp on 127.0.0.1
+2025-03-13 14:47:11,770 - INFO - Discovered open port 46105/tcp on 127.0.0.1
+2025-03-13 14:47:12,148 - INFO - Completed SYN Stealth Scan at 14:47, 0.99s elapsed (65535 total ports)
+2025-03-13 14:47:12,296 - INFO - Initiating Service scan at 14:47
+>>>>>>> 6f631ca4a4509fcc88f234ced88b9fb155cf3da1
