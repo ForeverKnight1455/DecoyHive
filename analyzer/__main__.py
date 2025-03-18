@@ -10,7 +10,7 @@ from utils import (
 )
 
 # Enforce root privileges
-if os.geteuid() != 0:
+if os.getuid() != 0:
     print("This script must be run as root. Please use 'sudo' or switch to the root user.")
     sys.exit(1)
 

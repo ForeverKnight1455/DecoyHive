@@ -1,5 +1,6 @@
 import json
 import os
+import re
 
 def detect_base_image(os_version):
     """Detects the correct base image and package manager."""
@@ -31,8 +32,7 @@ def detect_base_image(os_version):
         return "ubuntu:20.04", "apt-get", "apt-get update", "apt-get install -y"
 
 def generate_dockerfile(json_file, output_file="Dockerfile"):
-    """Generates a Dockerfile for creating a system clone."""
-
+    """Generates a Dockerfile for creating a system clone and creates a firewall_setup.sh if firewall rules exist."""
     with open(json_file, "r") as f:
         config = json.load(f)
 
@@ -54,7 +54,14 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
             f"RUN {update_cmd}",
             ""
         ])
-
+        # Ensure iptables is installed so that firewall rules work at runtime.
+        if package_manager == "apt-get":
+            dockerfile_content.append("RUN apt-get install -y iptables")
+        elif package_manager in ("yum", "dnf"):
+            dockerfile_content.append(f"RUN {package_manager} install -y iptables")
+        elif package_manager == "apk":
+            dockerfile_content.append("RUN apk add --no-cache iptables")
+        dockerfile_content.append("")
     else:
         dockerfile_content.extend([
             "# Install Chocolatey",
@@ -64,17 +71,17 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
             ""
         ])
 
+    # Process software packages from the configuration.
     software = config.get("software", [])
     packages = []
-
     if isinstance(software, dict):
         if is_windows:
             packages = software.get("windows", [])
         else:
-            packages = software.get("debian", []) if "apt" in package_manager else \
-                      software.get("rhl", []) if "yum" in package_manager or "dnf" in package_manager else \
-                      software.get("arch", []) if "pacman" in package_manager else \
-                      software.get("alpine", []) if "apk" in package_manager else []
+            packages = (software.get("debian", []) if "apt" in package_manager else 
+                        software.get("rhl", []) if package_manager in ("yum", "dnf") else 
+                        software.get("arch", []) if package_manager == "pacman" else 
+                        software.get("alpine", []) if package_manager == "apk" else [])
     elif isinstance(software, list):
         packages = software
 
@@ -86,6 +93,7 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
             ""
         ])
 
+    # Process user configuration from the config file.
     users_config = config.get("users", {}).get("users", "").split("\n")
     for user in users_config:
         parts = user.split(":")
@@ -94,10 +102,10 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
             uid = int(parts[2]) if parts[2].isdigit() else 0
             home_dir = parts[5]
             shell = parts[6]
-
             if not username.startswith('_') and uid >= 1000 and shell not in ['/usr/sbin/nologin', '/bin/false'] and home_dir != '/nonexistent':
                 dockerfile_content.append(f"RUN useradd -m -d {home_dir} -s {shell} {username}")
 
+    # Set environment variables excluding sensitive ones.
     env_vars = config.get("env_vars", {}).get("system_env", {})
     sensitive_keys = {"PASSWORD", "SECRET", "TOKEN", "API_KEY"}
     for key, value in env_vars.items():
@@ -105,34 +113,48 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
             value = value.replace("\\", "/").rstrip("/")
             dockerfile_content.append(f'ENV {key}="{value}"')
 
+    # Configure networking (this example just echoes the IP; adjust as needed).
     network_config = config.get("network", {})
     if network_config and not is_windows:
         dockerfile_content.append("\n# Configure networking")
         if "ip_address" in network_config:
             dockerfile_content.append(f'RUN echo "IP Address: {network_config["ip_address"]}"')
 
+    # Instead of running iptables commands at build time, generate a startup script.
     firewall_rules = network_config.get("firewall_rules", "").split("\n")
     if firewall_rules and not is_windows:
-        dockerfile_content.append("# Configure firewall rules")
+        firewall_script_lines = ["#!/bin/bash", "set -e"]
         for rule in firewall_rules:
-            if rule.strip():
-                dockerfile_content.append(f"RUN iptables {rule}")
-
-    services = config.get("services", [])
-    if services and not is_windows:
-        dockerfile_content.append("\n# Enable system services")
-        for service in services:
-            dockerfile_content.append(f"RUN systemctl enable {service['process_name']} || true")
-
-    if is_windows:
-        dockerfile_content.append('\nCMD ["cmd", "/c", "ping", "-t", "localhost", ">", "NUL"]')
+            rule = rule.strip()
+            if rule:
+                # Look for a rule matching "Chain <chain> (policy <policy>)"
+                match = re.match(r"Chain\s+(\S+)\s*\(policy\s+(\S+)\)", rule)
+                if match:
+                    chain, policy = match.groups()
+                    firewall_script_lines.append(f"iptables -P {chain} {policy}")
+                else:
+                    firewall_script_lines.append(f"# WARNING: Unrecognized firewall rule format skipped: {rule}")
+        # After firewall setup, execute the CMD provided to the container.
+        firewall_script_lines.append('exec "$@"')
+        # Write the firewall_setup.sh file to the build context.
+        with open("firewall_setup.sh", "w") as fw:
+            fw.write("\n".join(firewall_script_lines))
+        # In the Dockerfile, copy the script and set it as the ENTRYPOINT.
+        dockerfile_content.append("COPY firewall_setup.sh /firewall_setup.sh")
+        dockerfile_content.append("RUN chmod +x /firewall_setup.sh")
+        dockerfile_content.append("ENTRYPOINT [\"/firewall_setup.sh\"]")
+        # Specify the default command.
+        dockerfile_content.append('CMD ["tail", "-f", "/dev/null"]')
     else:
-        dockerfile_content.append('\nCMD ["tail", "-f", "/dev/null"]')
+        # If no firewall rules, simply set the default command.
+        dockerfile_content.append('CMD ["tail", "-f", "/dev/null"]')
 
     with open(output_file, "w") as f:
         f.write("\n".join(dockerfile_content))
 
     print(f"Dockerfile generated successfully as {output_file}")
+    if firewall_rules and not is_windows:
+        print("firewall_setup.sh generated successfully.")
 
 if __name__ == "__main__":
     generate_dockerfile("config_export/config.json")

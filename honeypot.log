@@ -1,0 +1,56 @@
+2025-03-18 21:26:26,630 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:26:26,670 - INFO - Detected OS: Linux
+2025-03-18 21:26:26,672 - INFO - Detecting Debian-based software...
+2025-03-18 21:26:26,746 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:26:26,781 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 21:26:26,784 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 21:26:26,788 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 21:26:26,796 - INFO - Saving config to file
+2025-03-18 21:30:12,248 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:30:12,263 - INFO - Detected OS: Linux
+2025-03-18 21:30:12,264 - INFO - Detecting Debian-based software...
+2025-03-18 21:30:12,308 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:30:12,323 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 21:30:12,326 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 21:30:12,330 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 21:30:12,337 - INFO - Saving config to file
+2025-03-18 21:49:02,719 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:49:02,746 - INFO - Detected OS: Linux
+2025-03-18 21:49:02,747 - INFO - Detecting Debian-based software...
+2025-03-18 21:49:02,799 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:49:02,821 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 21:49:02,823 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 21:49:02,825 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 21:49:02,831 - INFO - Saving config to file
+2025-03-18 21:51:01,710 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:51:01,728 - INFO - Detected OS: Linux
+2025-03-18 21:51:01,728 - INFO - Detecting Debian-based software...
+2025-03-18 21:51:01,769 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:51:01,790 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 21:51:01,793 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 21:51:01,795 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 21:51:01,801 - INFO - Saving config to file
+2025-03-18 21:55:56,590 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:55:56,607 - INFO - Detected OS: Linux
+2025-03-18 21:55:56,607 - INFO - Detecting Debian-based software...
+2025-03-18 21:55:56,650 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 21:55:56,665 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 21:55:56,668 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 21:55:56,670 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 21:55:56,676 - INFO - Saving config to file
+2025-03-18 22:09:38,517 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 22:09:38,559 - INFO - Detected OS: Linux
+2025-03-18 22:09:38,559 - INFO - Detecting Debian-based software...
+2025-03-18 22:09:38,650 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 22:09:38,682 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 22:09:38,686 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 22:09:38,691 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 22:09:38,701 - INFO - Saving config to file
+2025-03-18 22:10:30,644 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 22:10:30,665 - INFO - Detected OS: Linux
+2025-03-18 22:10:30,666 - INFO - Detecting Debian-based software...
+2025-03-18 22:10:30,712 - WARNING - Error fetching service info: port/proto not found
+2025-03-18 22:10:30,730 - ERROR - Command 'crontab -l' failed: Command '['crontab', '-l']' returned non-zero exit status 1.
+2025-03-18 22:10:30,732 - ERROR - Command 'cat /var/log/syslog' failed: Command '['cat', '/var/log/syslog']' returned non-zero exit status 1.
+2025-03-18 22:10:30,735 - ERROR - Command 'cat /var/log/auth.log' failed: Command '['cat', '/var/log/auth.log']' returned non-zero exit status 1.
+2025-03-18 22:10:30,741 - INFO - Saving config to file
