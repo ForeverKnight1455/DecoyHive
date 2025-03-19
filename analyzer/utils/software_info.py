@@ -78,9 +78,7 @@ def get_user_info():
             "sudoers": run_command(["cat", "/etc/sudoers"])
         }
     elif os_name=="Windows":
-        return {
-
-        }
+        return {}
 
 def get_environment_variables():
     """Collect environment variables."""
@@ -112,9 +110,7 @@ def get_log_files():
             "application_logs": run_command(["ls", "/var/log"])
         }
     elif os_name=="Windows":
-        return{
-
-        }
+        return{}
 
 def get_installed_software_linux():
     """Get a list of installed software on Linux using the appropriate package manager."""

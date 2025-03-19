@@ -54,13 +54,13 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
             f"RUN {update_cmd}",
             ""
         ])
-        # Ensure iptables is installed so that firewall rules work at runtime.
+        # Ensure iptables and net-tools are installed so that firewall rules work at runtime.
         if package_manager == "apt-get":
-            dockerfile_content.append("RUN apt-get install -y iptables")
+            dockerfile_content.append("RUN apt-get install -y iptables net-tools")
         elif package_manager in ("yum", "dnf"):
-            dockerfile_content.append(f"RUN {package_manager} install -y iptables")
+            dockerfile_content.append(f"RUN {package_manager} install -y iptables net-tools")
         elif package_manager == "apk":
-            dockerfile_content.append("RUN apk add --no-cache iptables")
+            dockerfile_content.append("RUN apk add --no-cache iptables net-tools")
         dockerfile_content.append("")
     else:
         dockerfile_content.extend([
