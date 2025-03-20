@@ -7,8 +7,14 @@ import os
 
 # Configure logging
 os_name=platform.system()
+
+
+if not os.path.exists("./logs"):
+    os.makedirs("./logs")
+
+
 logging.basicConfig(
-    filename='honeypot.log',
+    filename='./logs/honeypot.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -81,10 +87,19 @@ def get_user_info():
         return {}
 
 def get_environment_variables():
-    """Collect environment variables."""
+    """Collect relevant environment variables while skipping unnecessary ones."""
     try:
+        irrelevant_keys = {
+            "LS_COLORS", "PWD", "OLDPWD", "SHLVL", "_", "PROMPT_COMMAND",
+            "HISTCONTROL", "HISTFILE", "HISTSIZE", "PS1", "PS2", "PS4",
+            "DISPLAY", "SESSION_MANAGER", "XDG_RUNTIME_DIR"
+        }
+
         return {
-            "system_env": dict(os.environ),
+            "system_env": {
+                key: value for key, value in os.environ.items()
+                if key not in irrelevant_keys and not key.startswith(("XDG_", "DBUS_", "GPG_", "SSH_", "VTE_"))
+            }
         }
     except Exception as e:
         logging.error(f"Error retrieving environment variables: {e}")
@@ -99,7 +114,7 @@ def get_cron_jobs():
             logging.error(f"Error collecting cron jobs: {e}")
             return {"cron_jobs": []}
     elif os_name=="Windows":
-        return 
+        return
 
 def get_log_files():
     """Collect system logs."""

@@ -10,15 +10,13 @@ from utils import (
     generate_dockerfile, docker_run
 )
 
-# Enforce root privileges
-if os.getuid() != 0:
-    print("This script must be run as root. Please use 'sudo' or switch to the root user.")
-    sys.exit(1)
 
 def load_config():
     default_config = {
         "export_config_directory": "./config_exports",
+        "output_directory" : "./output",
         "log_file": "app.log",
+        "logs_directory":"./logs",
         "log_level": "INFO",
         "enable_service_monitoring": True,
         "enable_network_monitoring": True,
@@ -32,18 +30,24 @@ def load_config():
                 return json.load(f)
         except json.JSONDecodeError as e:
             logging.error(f"Error parsing settings.json: {e}")
+    else:
+        try:
+            with open(config_path, "w") as f:
+                f.write(json.dumps(default_config))
+        except Exception as e:
+            logging.error(f"Error parsing settings.json: {e}")
+
     return default_config
 
 config = load_config()
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("honeypot.log"),  # Log to file
-        logging.StreamHandler()  # Log to terminal
-    ]
-)
+#create folder if not exist logs and output
+if not os.path.exists(config['output_directory']):
+    os.makedirs(config['output_directory'])
+if not os.path.exists(config['logs_directory']):
+    os.makedirs(config['logs_directory'])
+
+
 
 def save_config():
     """Save collected data to a config file."""
@@ -77,8 +81,8 @@ def save_config():
 if __name__ == "__main__":
     # Collect configuration and generate Dockerfile
     save_config()
-    generate_dockerfile("./config_exports/config.json")
-    
+    generate_dockerfile(f"{config['export_config_directory']}/config.json",config["output_directory"])
+
     # Call the docker_run module's main() to build, run, and manage the container lifecycle.
     # The script will run continuously and upon exit, the container will be stopped and removed.
     docker_run.main()

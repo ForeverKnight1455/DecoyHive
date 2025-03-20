@@ -16,6 +16,12 @@ logging.basicConfig(
 
 def run_nmap_scan(target="127.0.0.1"):
     """Runs an Nmap scan and streams the output live."""
+
+    # Enforce root privileges
+    if os.getuid() != 0:
+        print("This script must be run as root. Please Enter your sudo password")
+
+
     try:
         command = ["sudo", "nmap", "-Pn", "-sV", "-p-", "-vv", target]  # Nmap scan with service detection
         logging.info(f"Running Nmap scan: {' '.join(command)}")

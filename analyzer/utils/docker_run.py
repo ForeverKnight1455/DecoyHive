@@ -5,7 +5,7 @@ import signal
 import sys
 
 def build_and_run_docker():
-    dockerfile_path = "Dockerfile"
+    dockerfile_path = "./output/Dockerfile"
     image_name = "collected_data_image"
     container_name = "honeypot_container"
 

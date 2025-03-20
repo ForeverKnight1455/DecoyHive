@@ -1,3 +1,5 @@
-config_exports
+config_exports/
 __pycache__
 Dockerfile
+output/
+logs/

@@ -31,7 +31,7 @@ def detect_base_image(os_version):
     else:
         return "ubuntu:20.04", "apt-get", "apt-get update", "apt-get install -y"
 
-def generate_dockerfile(json_file, output_file="Dockerfile"):
+def generate_dockerfile(json_file,output_directory = "."):
     """Generates a Dockerfile for creating a system clone and creates a firewall_setup.sh if firewall rules exist."""
     with open(json_file, "r") as f:
         config = json.load(f)
@@ -78,9 +78,9 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
         if is_windows:
             packages = software.get("windows", [])
         else:
-            packages = (software.get("debian", []) if "apt" in package_manager else 
-                        software.get("rhl", []) if package_manager in ("yum", "dnf") else 
-                        software.get("arch", []) if package_manager == "pacman" else 
+            packages = (software.get("debian", []) if "apt" in package_manager else
+                        software.get("rhl", []) if package_manager in ("yum", "dnf") else
+                        software.get("arch", []) if package_manager == "pacman" else
                         software.get("alpine", []) if package_manager == "apk" else [])
     elif isinstance(software, list):
         packages = software
@@ -137,7 +137,7 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
         # After firewall setup, execute the CMD provided to the container.
         firewall_script_lines.append('exec "$@"')
         # Write the firewall_setup.sh file to the build context.
-        with open("firewall_setup.sh", "w") as fw:
+        with open(f"{output_directory}/firewall_setup.sh", "w") as fw:
             fw.write("\n".join(firewall_script_lines))
         # In the Dockerfile, copy the script and set it as the ENTRYPOINT.
         dockerfile_content.append("COPY firewall_setup.sh /firewall_setup.sh")
@@ -149,10 +149,10 @@ def generate_dockerfile(json_file, output_file="Dockerfile"):
         # If no firewall rules, simply set the default command.
         dockerfile_content.append('CMD ["tail", "-f", "/dev/null"]')
 
-    with open(output_file, "w") as f:
+    with open(f"{output_directory}/Dockerfile", "w") as f:
         f.write("\n".join(dockerfile_content))
 
-    print(f"Dockerfile generated successfully as {output_file}")
+    print(f"Dockerfile generated successfully as {output_directory}/Dockerfile")
     if firewall_rules and not is_windows:
         print("firewall_setup.sh generated successfully.")
 
