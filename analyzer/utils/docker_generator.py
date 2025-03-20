@@ -102,7 +102,7 @@ def generate_dockerfile(json_file,output_directory = "."):
             uid = int(parts[2]) if parts[2].isdigit() else 0
             home_dir = parts[5]
             shell = parts[6]
-            if not username.startswith('_') and uid >= 1000 and shell not in ['/usr/sbin/nologin', '/bin/false'] and home_dir != '/nonexistent':
+            if not username.startswith('_') and uid >= 1000 and shell not in ['/usr/sbin/nologin', '/bin/false'] and home_dir != '/nonexistent' and not username.startswith('nobody'):
                 dockerfile_content.append(f"RUN useradd -m -d {home_dir} -s {shell} {username}")
 
     # Set environment variables excluding sensitive ones.
