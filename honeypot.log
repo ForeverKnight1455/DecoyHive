@@ -1,0 +1,69 @@
+2025-03-24 23:30:52,488 - INFO - Running Nmap scan: nmap -Pn -sV -p- -vv localhost
+2025-03-24 23:30:52,523 - INFO - Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-24 23:30 IST
+2025-03-24 23:30:52,635 - INFO - NSE: Loaded 47 scripts for scanning.
+2025-03-24 23:30:52,635 - INFO - Warning: Hostname localhost resolves to 3 IPs. Using 127.0.0.1.
+2025-03-24 23:30:52,636 - INFO - Initiating SYN Stealth Scan at 23:30
+2025-03-24 23:30:52,702 - INFO - Scanning localhost (127.0.0.1) [65535 ports]
+2025-03-24 23:30:52,703 - INFO - Discovered open port 22/tcp on 127.0.0.1
+2025-03-24 23:30:52,863 - INFO - Discovered open port 6443/tcp on 127.0.0.1
+2025-03-24 23:30:53,018 - INFO - Discovered open port 41263/tcp on 127.0.0.1
+2025-03-24 23:30:53,349 - INFO - Completed SYN Stealth Scan at 23:30, 0.71s elapsed (65535 total ports)
+2025-03-24 23:30:53,528 - INFO - Initiating Service scan at 23:30
+2025-03-24 23:31:04,611 - INFO - Scanning 3 services on localhost (127.0.0.1)
+2025-03-24 23:31:04,612 - INFO - Completed Service scan at 23:31, 11.08s elapsed (3 services on 1 host)
+2025-03-24 23:31:04,613 - INFO - NSE: Script scanning 127.0.0.1.
+2025-03-24 23:31:04,614 - INFO - NSE: Starting runlevel 1 (of 2) scan.
+2025-03-24 23:31:04,614 - INFO - Initiating NSE at 23:31
+2025-03-24 23:31:04,626 - INFO - Completed NSE at 23:31, 0.02s elapsed
+2025-03-24 23:31:04,627 - INFO - NSE: Starting runlevel 2 (of 2) scan.
+2025-03-24 23:31:04,628 - INFO - Initiating NSE at 23:31
+2025-03-24 23:31:04,639 - INFO - Completed NSE at 23:31, 0.01s elapsed
+2025-03-24 23:31:04,640 - INFO - Nmap scan report for localhost (127.0.0.1)
+2025-03-24 23:31:04,653 - INFO - Host is up, received user-set (0.0000040s latency).
+2025-03-24 23:31:04,654 - INFO - Other addresses for localhost (not scanned): ::1 127.0.0.1
+2025-03-24 23:31:04,654 - INFO - Scanned at 2025-03-24 23:30:52 IST for 12s
+2025-03-24 23:31:04,655 - INFO - Not shown: 65532 closed tcp ports (reset)
+2025-03-24 23:31:04,655 - INFO - PORT      STATE SERVICE    REASON         VERSION
+2025-03-24 23:31:04,656 - INFO - 22/tcp    open  ssh        syn-ack ttl 64 OpenSSH 9.9p1 Debian 3 (protocol 2.0)
+2025-03-24 23:31:04,656 - INFO - 6443/tcp  open  tcpwrapped syn-ack ttl 64
+2025-03-24 23:31:04,657 - INFO - 41263/tcp open  unknown    syn-ack ttl 64
+2025-03-24 23:31:04,657 - INFO - 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+2025-03-24 23:31:04,658 - INFO - SF-Port41263-TCP:V=7.95%I=7%D=3/24%Time=67E19DE0%P=x86_64-pc-linux-gnu%r(G
+2025-03-24 23:31:04,658 - INFO - SF:etRequest,76,"HTTP/1\.1\x20403\x20Forbidden\r\nContent-Type:\x20text/pl
+2025-03-24 23:31:04,659 - INFO - SF:ain\r\nDate:\x20Mon,\x2024\x20Mar\x202025\x2018:01:04\x20GMT\r\nConnect
+2025-03-24 23:31:04,659 - INFO - SF:ion:\x20close\r\n\r\nForbidden\.")%r(HTTPOptions,8F,"HTTP/1\.1\x20405\x
+2025-03-24 23:31:04,660 - INFO - SF:20Method\x20Not\x20Allowed\r\nContent-Type:\x20text/plain\r\nDate:\x20M
+2025-03-24 23:31:04,660 - INFO - SF:on,\x2024\x20Mar\x202025\x2018:01:04\x20GMT\r\nConnection:\x20close\r\n
+2025-03-24 23:31:04,661 - INFO - SF:\r\nUnsupported\x20method\x20OPTIONS")%r(RTSPRequest,8F,"HTTP/1\.1\x204
+2025-03-24 23:31:04,661 - INFO - SF:05\x20Method\x20Not\x20Allowed\r\nContent-Type:\x20text/plain\r\nDate:\
+2025-03-24 23:31:04,662 - INFO - SF:x20Mon,\x2024\x20Mar\x202025\x2018:01:04\x20GMT\r\nConnection:\x20close
+2025-03-24 23:31:04,663 - INFO - SF:\r\n\r\nUnsupported\x20method\x20OPTIONS")%r(RPCCheck,2F,"HTTP/1\.1\x20
+2025-03-24 23:31:04,663 - INFO - SF:400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(DNSVersionBin
+2025-03-24 23:31:04,664 - INFO - SF:dReqTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\
+2025-03-24 23:31:04,665 - INFO - SF:r\n\r\n")%r(DNSStatusRequestTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\
+2025-03-24 23:31:04,665 - INFO - SF:r\nConnection:\x20close\r\n\r\n")%r(Help,2F,"HTTP/1\.1\x20400\x20Bad\x2
+2025-03-24 23:31:04,666 - INFO - SF:0Request\r\nConnection:\x20close\r\n\r\n")%r(SSLSessionReq,2F,"HTTP/1\.
+2025-03-24 23:31:04,667 - INFO - SF:1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(Terminal
+2025-03-24 23:31:04,667 - INFO - SF:ServerCookie,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20c
+2025-03-24 23:31:04,668 - INFO - SF:lose\r\n\r\n")%r(TLSSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r
+2025-03-24 23:31:04,668 - INFO - SF:\nConnection:\x20close\r\n\r\n")%r(Kerberos,2F,"HTTP/1\.1\x20400\x20Bad
+2025-03-24 23:31:04,669 - INFO - SF:\x20Request\r\nConnection:\x20close\r\n\r\n")%r(SMBProgNeg,2F,"HTTP/1\.
+2025-03-24 23:31:04,670 - INFO - SF:1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(X11Probe
+2025-03-24 23:31:04,670 - INFO - SF:,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n
+2025-03-24 23:31:04,671 - INFO - SF:")%r(FourOhFourRequest,76,"HTTP/1\.1\x20403\x20Forbidden\r\nContent-Typ
+2025-03-24 23:31:04,672 - INFO - SF:e:\x20text/plain\r\nDate:\x20Mon,\x2024\x20Mar\x202025\x2018:01:04\x20G
+2025-03-24 23:31:04,673 - INFO - SF:MT\r\nConnection:\x20close\r\n\r\nForbidden\.")%r(LPDString,2F,"HTTP/1\
+2025-03-24 23:31:04,673 - INFO - SF:.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(LDAPSea
+2025-03-24 23:31:04,674 - INFO - SF:rchReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r
+2025-03-24 23:31:04,674 - INFO - SF:\n\r\n")%r(LDAPBindReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnec
+2025-03-24 23:31:04,675 - INFO - SF:tion:\x20close\r\n\r\n")%r(SIPOptions,2F,"HTTP/1\.1\x20400\x20Bad\x20Re
+2025-03-24 23:31:04,675 - INFO - SF:quest\r\nConnection:\x20close\r\n\r\n");
+2025-03-24 23:31:04,676 - INFO - Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+2025-03-24 23:31:04,677 - INFO - 
+2025-03-24 23:31:04,677 - INFO - Read data files from: /usr/share/nmap
+2025-03-24 23:31:04,678 - INFO - Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+2025-03-24 23:31:04,678 - INFO - Nmap done: 1 IP address (1 host up) scanned in 12.16 seconds
+2025-03-24 23:31:04,679 - INFO - Raw packets sent: 65535 (2.884MB) | Rcvd: 131150 (5.517MB)
+2025-03-24 23:31:04,705 - INFO - Detected service: ssh on port 22, process: python
+2025-03-24 23:31:04,707 - INFO - Detected service: tcpwrapped on port 6443, process: python
+2025-03-24 23:31:04,708 - INFO - Detected service: unknown on port 41263, process: node

@@ -3,3 +3,6 @@ __pycache__
 Dockerfile
 output/
 logs/
+.env
+winenv 
+env

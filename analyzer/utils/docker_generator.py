@@ -2,10 +2,11 @@ import json
 import os
 import re
 
-def detect_base_image(os_version):
+def detect_base_image(os_version): #TODO: Add support for other distros
     """Detects the correct base image and package manager."""
-    os_version = os_version.lower()
 
+    os_version = os_version.lower()
+    print(f"os_version:{os_version}")
     if "windows" in os_version:
         if "2019" in os_version:
             return "mcr.microsoft.com/windows/servercore:ltsc2019", "choco", "choco", "choco install -y"
@@ -46,7 +47,7 @@ def generate_dockerfile(json_file,output_directory = "."):
         'LABEL maintainer="SystemClone"',
         ""
     ]
-
+    
     if not is_windows:
         dockerfile_content.extend([
             "# Set non-interactive mode",
@@ -56,11 +57,11 @@ def generate_dockerfile(json_file,output_directory = "."):
         ])
         # Ensure iptables and net-tools are installed so that firewall rules work at runtime.
         if package_manager == "apt-get":
-            dockerfile_content.append("RUN apt-get install -y iptables net-tools")
+            dockerfile_content.append("RUN apt-get update && apt-get install -y --no-install-recommends iptables net-tools ssh netcat-traditional")
         elif package_manager in ("yum", "dnf"):
-            dockerfile_content.append(f"RUN {package_manager} install -y iptables net-tools")
+            dockerfile_content.append(f"RUN {package_manager} install -y iptables net-tools ssh netcat-traditional")
         elif package_manager == "apk":
-            dockerfile_content.append("RUN apk add --no-cache iptables net-tools")
+            dockerfile_content.append("RUN apk add --no-cache iptables net-tools ssh netcat-traditional")
         dockerfile_content.append("")
     else:
         dockerfile_content.extend([
@@ -113,14 +114,15 @@ def generate_dockerfile(json_file,output_directory = "."):
             value = value.replace("\\", "/").rstrip("/")
             dockerfile_content.append(f'ENV {key}="{value}"')
 
-    # Configure networking (this example just echoes the IP; adjust as needed).
+    # Process network configuration for honeypot traffic redirection.
     network_config = config.get("network", {})
+    honeypot_port = network_config.get("honeypot_port", 8080)  # Default honeypot port.
     if network_config and not is_windows:
         dockerfile_content.append("\n# Configure networking")
         if "ip_address" in network_config:
             dockerfile_content.append(f'RUN echo "IP Address: {network_config["ip_address"]}"')
 
-    # Instead of running iptables commands at build time, generate a startup script.
+    # Generate iptables rules for traffic redirection to the honeypot container.
     firewall_rules = network_config.get("firewall_rules", "").split("\n")
     if firewall_rules and not is_windows:
         firewall_script_lines = ["#!/bin/bash", "set -e"]
@@ -134,13 +136,40 @@ def generate_dockerfile(json_file,output_directory = "."):
                     firewall_script_lines.append(f"iptables -P {chain} {policy}")
                 else:
                     firewall_script_lines.append(f"# WARNING: Unrecognized firewall rule format skipped: {rule}")
+
+        # Add iptables rules to redirect traffic to the honeypot container.
+        firewall_script_lines.extend([
+            "# Redirect traffic to the honeypot container",
+            f"iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port {honeypot_port}",
+            f"iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port {honeypot_port}",
+        ])
+
+        # Allow open ports specified in the ports section of config.json.
+        ports_config = config.get("ports", [])
+        known_ports = {22, 80, 443, 8080, 3306, 5432}  # Example list of known port numbers
+        if ports_config:
+            firewall_script_lines.append("# Allow open ports specified in the configuration")
+            for port_entry in ports_config:
+                port = port_entry.get("port")
+                if isinstance(port, int) and 1 <= port <= 65535:
+                    if port in known_ports:
+                        firewall_script_lines.append(f"iptables -A INPUT -p tcp --dport {port} -j ACCEPT")
+                    else:
+                        firewall_script_lines.append(f"# Port {port} is not in the known list, mapping to netcat listener")
+                        firewall_script_lines.append(f"iptables -A INPUT -p tcp --dport {port} -j ACCEPT")
+                        firewall_script_lines.append(
+                            f"(while true; do echo 'Listening on port {port}' | nc -lk -p {port}; done) &"
+                        )
+                else:
+                    firewall_script_lines.append(f"# WARNING: Invalid port skipped: {port}")
+
         # After firewall setup, execute the CMD provided to the container.
         firewall_script_lines.append('exec "$@"')
         # Write the firewall_setup.sh file to the build context.
         with open(f"{output_directory}/firewall_setup.sh", "w") as fw:
             fw.write("\n".join(firewall_script_lines))
         # In the Dockerfile, copy the script and set it as the ENTRYPOINT.
-        dockerfile_content.append("COPY firewall_setup.sh /firewall_setup.sh")
+        dockerfile_content.append(f"COPY firewall_setup.sh /firewall_setup.sh")
         dockerfile_content.append("RUN chmod +x /firewall_setup.sh")
         dockerfile_content.append("ENTRYPOINT [\"/firewall_setup.sh\"]")
         # Specify the default command.
