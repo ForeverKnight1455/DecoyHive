@@ -24,6 +24,7 @@ def get_running_services():
     services = []
     try:
         for conn in psutil.net_connections(kind='inet'):
+            
             if conn.status == psutil.CONN_LISTEN:
                 try:
                     service_name = socket.getservbyport(conn.laddr.port)
@@ -119,7 +120,7 @@ def get_cron_jobs():
 def get_log_files():
     """Collect system logs."""
     if os_name=="Linux":
-        return {
+            return {
             "syslog": run_command(["cat", "/var/log/syslog"]),
             "auth_log": run_command(["cat", "/var/log/auth.log"]),
             "application_logs": run_command(["ls", "/var/log"])
@@ -169,3 +170,9 @@ def get_installed_software():
     except Exception as e:
         logging.error(f"Error detecting installed software: {e}")
         return "Error detecting installed software"
+
+
+if __name__ == "__main__":
+    # Display outputs of the functions
+    print("Running Services:")
+    print(get_running_services())

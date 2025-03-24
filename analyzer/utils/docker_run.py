@@ -15,16 +15,15 @@ def build_and_run_docker():
 
     try:
         print("Building Docker image...")
-        subprocess.run(["docker", "build", "-t", image_name, "."], check=True)
+        subprocess.run([
+            "docker", "build", "-t", image_name, "-f", dockerfile_path, "./output"
+        ], check=True)
 
         print("Running Docker container with port mappings...")
         subprocess.run([
             "docker", "run", "--name", container_name,
             "--cap-add=NET_ADMIN",
             "-d",
-            "-p", "22:22",
-            "-p", "80:80",
-            "-p", "443:443",
             image_name
         ], check=True)
         print(f"Container '{container_name}' is running.")
@@ -82,7 +81,7 @@ def remove_iptables(container_ip):
             pass
     print("iptables rules removed.")
 
-def stop_container(container_name):
+def stop_container(container_name, image_name):
     try:
         print(f"Stopping container '{container_name}'...")
         subprocess.run(["docker", "stop", container_name], check=True)
@@ -90,6 +89,13 @@ def stop_container(container_name):
         print(f"Container '{container_name}' has been stopped and removed.")
     except subprocess.CalledProcessError as e:
         print(f"Error stopping/removing container: {e}")
+
+    print(f"Deleting Docker image '{image_name}'...")
+    try:
+        subprocess.run(["docker", "rmi", image_name], check=True)
+        print(f"Image '{image_name}' has been deleted.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error deleting image: {e}")
 
 def main():
     container_name = build_and_run_docker()
@@ -99,7 +105,7 @@ def main():
     def signal_handler(sig, frame):
         print("\nExiting script; cleaning up...")
         remove_iptables(container_ip)
-        stop_container(container_name)
+        stop_container(container_name, "collected_data_image")
         sys.exit(0)
 
     # Register signal handlers for graceful exit
