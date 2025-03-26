@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import subprocess
 
 def detect_base_image(os_version): #TODO: Add support for other distros
     """Detects the correct base image and package manager."""
@@ -32,8 +33,58 @@ def detect_base_image(os_version): #TODO: Add support for other distros
     else:
         return "ubuntu:20.04", "apt-get", "apt-get update", "apt-get install -y"
 
-def generate_dockerfile(json_file,output_directory = "."):
-    """Generates a Dockerfile for creating a system clone and creates a firewall_setup.sh if firewall rules exist."""
+def get_container_ip(container_name):
+    """Retrieve the IP address of a running Docker container."""
+    try:
+        result = subprocess.run(
+            ["docker", "inspect", "-f", "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}", container_name],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        return result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        print(f"Error retrieving container IP: {e.stderr}")
+        return None
+
+def spin_up_container_and_get_hostname(dockerfile_path, container_name):
+    """Build and run the Docker container, then retrieve its hostname."""
+    try:
+        # Remove existing container with the same name, if any
+        subprocess.run(
+            ["docker", "rm", "-f", container_name],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        # Build the Docker image
+        subprocess.run(
+            ["docker", "build", "-t", container_name, "-f", dockerfile_path, "."],
+            check=True
+        )
+        # Run the Docker container
+        subprocess.run(
+            ["docker", "run", "-d", "--name", container_name, container_name],
+            check=True
+        )
+        # Retrieve the container's IP address
+        container_ip = get_container_ip(container_name)
+        if container_ip:
+            # Assign the IP address to a hostname in /etc/hosts
+            hostname = "docker-container.local"
+            with open("/etc/hosts", "a") as hosts_file:
+                hosts_file.write(f"{container_ip} {hostname}\n")
+            print(f"Assigned hostname '{hostname}' to IP address {container_ip}")
+            return hostname
+        else:
+            print("Error: Could not retrieve container IP address.")
+            return None
+    except subprocess.CalledProcessError as e:
+        print(f"Error spinning up container: {e.stderr}")
+        return None
+
+def generate_dockerfile(json_file, output_directory="."):
+    """Generates a Dockerfile for creating a system clone."""
     with open(json_file, "r") as f:
         config = json.load(f)
 
@@ -55,13 +106,13 @@ def generate_dockerfile(json_file,output_directory = "."):
             f"RUN {update_cmd}",
             ""
         ])
-        # Ensure iptables and net-tools are installed so that firewall rules work at runtime.
+        # Ensure ssh, net-tools, and iptables are installed
         if package_manager == "apt-get":
-            dockerfile_content.append("RUN apt-get update && apt-get install -y --no-install-recommends iptables net-tools ssh netcat-traditional")
+            dockerfile_content.append("RUN apt-get update && apt-get install -y --no-install-recommends ssh net-tools iptables")
         elif package_manager in ("yum", "dnf"):
-            dockerfile_content.append(f"RUN {package_manager} install -y iptables net-tools ssh netcat-traditional")
+            dockerfile_content.append(f"RUN {package_manager} install -y ssh net-tools iptables")
         elif package_manager == "apk":
-            dockerfile_content.append("RUN apk add --no-cache iptables net-tools ssh netcat-traditional")
+            dockerfile_content.append("RUN apk add --no-cache openssh net-tools iptables")
         dockerfile_content.append("")
     else:
         dockerfile_content.extend([
@@ -114,76 +165,43 @@ def generate_dockerfile(json_file,output_directory = "."):
             value = value.replace("\\", "/").rstrip("/")
             dockerfile_content.append(f'ENV {key}="{value}"')
 
-    # Process network configuration for honeypot traffic redirection.
-    network_config = config.get("network", {})
-    honeypot_port = network_config.get("honeypot_port", 8080)  # Default honeypot port.
-    if network_config and not is_windows:
-        dockerfile_content.append("\n# Configure networking")
-        if "ip_address" in network_config:
-            dockerfile_content.append(f'RUN echo "IP Address: {network_config["ip_address"]}"')
+    # Add a long-running process to keep the container alive
+    dockerfile_content.extend([
+        "# Keep the container running",
+        'CMD ["tail", "-f", "/dev/null"]'
+    ])
 
-    # Generate iptables rules for traffic redirection to the honeypot container.
-    firewall_rules = network_config.get("firewall_rules", "").split("\n")
-    if firewall_rules and not is_windows:
-        firewall_script_lines = ["#!/bin/bash", "set -e"]
-        for rule in firewall_rules:
-            rule = rule.strip()
-            if rule:
-                # Look for a rule matching "Chain <chain> (policy <policy>)"
-                match = re.match(r"Chain\s+(\S+)\s*\(policy\s+(\S+)\)", rule)
-                if match:
-                    chain, policy = match.groups()
-                    firewall_script_lines.append(f"iptables -P {chain} {policy}")
-                else:
-                    firewall_script_lines.append(f"# WARNING: Unrecognized firewall rule format skipped: {rule}")
-
-        # Add iptables rules to redirect traffic to the honeypot container.
-        firewall_script_lines.extend([
-            "# Redirect traffic to the honeypot container",
-            f"iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port {honeypot_port}",
-            f"iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port {honeypot_port}",
-        ])
-
-        # Allow open ports specified in the ports section of config.json.
-        ports_config = config.get("ports", [])
-        known_ports = {22, 80, 443, 8080, 3306, 5432}  # Example list of known port numbers
-        if ports_config:
-            firewall_script_lines.append("# Allow open ports specified in the configuration")
-            for port_entry in ports_config:
-                port = port_entry.get("port")
-                if isinstance(port, int) and 1 <= port <= 65535:
-                    if port in known_ports:
-                        firewall_script_lines.append(f"iptables -A INPUT -p tcp --dport {port} -j ACCEPT")
-                    else:
-                        firewall_script_lines.append(f"# Port {port} is not in the known list, mapping to netcat listener")
-                        firewall_script_lines.append(f"iptables -A INPUT -p tcp --dport {port} -j ACCEPT")
-                        firewall_script_lines.append(
-                            f"(while true; do echo 'Listening on port {port}' | nc -lk -p {port}; done) &"
-                        )
-                else:
-                    firewall_script_lines.append(f"# WARNING: Invalid port skipped: {port}")
-
-        # After firewall setup, execute the CMD provided to the container.
-        firewall_script_lines.append('exec "$@"')
-        # Write the firewall_setup.sh file to the build context.
-        with open(f"{output_directory}/firewall_setup.sh", "w") as fw:
-            fw.write("\n".join(firewall_script_lines))
-        # In the Dockerfile, copy the script and set it as the ENTRYPOINT.
-        dockerfile_content.append(f"COPY firewall_setup.sh /firewall_setup.sh")
-        dockerfile_content.append("RUN chmod +x /firewall_setup.sh")
-        dockerfile_content.append("ENTRYPOINT [\"/firewall_setup.sh\"]")
-        # Specify the default command.
-        dockerfile_content.append('CMD ["tail", "-f", "/dev/null"]')
-    else:
-        # If no firewall rules, simply set the default command.
-        dockerfile_content.append('CMD ["tail", "-f", "/dev/null"]')
-
-    with open(f"{output_directory}/Dockerfile", "w") as f:
+    # Write the Dockerfile to the output directory
+    dockerfile_path = os.path.join(output_directory, "Dockerfile")
+    with open(dockerfile_path, "w") as f:
         f.write("\n".join(dockerfile_content))
 
-    print(f"Dockerfile generated successfully as {output_directory}/Dockerfile")
-    if firewall_rules and not is_windows:
-        print("firewall_setup.sh generated successfully.")
+    print(f"Dockerfile generated successfully as {dockerfile_path}")
+
+def apply_iptables_rules_on_host(firewall_script_path):
+    """Apply iptables rules on the host system."""
+    try:
+        subprocess.run(["bash", firewall_script_path], check=True)
+        print("Firewall rules applied successfully on the host.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error applying firewall rules on the host: {e.stderr}")
+
+def apply_iptables_rules_in_container(container_name, firewall_script_path):
+    """Copy and apply iptables rules inside the container."""
+    try:
+        # Copy the firewall script to the container
+        subprocess.run(
+            ["docker", "cp", firewall_script_path, f"{container_name}:/firewall_setup.sh"],
+            check=True
+        )
+        # Execute the firewall script inside the container
+        subprocess.run(
+            ["docker", "exec", container_name, "bash", "/firewall_setup.sh"],
+            check=True
+        )
+        print("Firewall rules applied successfully in the container.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error applying firewall rules in the container: {e.stderr}")
 
 if __name__ == "__main__":
     generate_dockerfile("config_export/config.json")

@@ -4,6 +4,36 @@ import time
 import signal
 import sys
 
+def container_exists(container_name):
+    """Check if a container with the given name already exists."""
+    try:
+        result = subprocess.run(
+            ["docker", "ps", "-a", "--filter", f"name={container_name}", "--format", "{{.Names}}"],
+            stdout=subprocess.PIPE,
+            text=True
+        )
+        return container_name in result.stdout.strip().split("\n")
+    except subprocess.CalledProcessError as e:
+        print(f"Error checking container existence: {e}")
+        return False
+
+def image_exists(image_name):
+    """Check if a Docker image with the given name already exists."""
+    try:
+        result = subprocess.run(
+            ["docker", "images", "--filter", f"reference={image_name}", "--format", "{{.Repository}}"],
+            stdout=subprocess.PIPE,
+            text=True
+        )
+        return image_name in result.stdout.strip().split("\n")
+    except subprocess.CalledProcessError as e:
+        print(f"Error checking image existence: {e}")
+        return False
+
+def get_container_identifier(container_name):
+    """Return the container name or ID for use in configurations."""
+    return container_name
+
 def build_and_run_docker():
     dockerfile_path = "./output/Dockerfile"
     image_name = "collected_data_image"
@@ -14,72 +44,37 @@ def build_and_run_docker():
         sys.exit(1)
 
     try:
-        print("Building Docker image...")
-        subprocess.run([
-            "docker", "build", "-t", image_name, "-f", dockerfile_path, "./output"
-        ], check=True)
+        # Check if the image already exists
+        if not image_exists(image_name):
+            print("Building Docker image...")
+            subprocess.run([
+                "docker", "build", "-t", image_name, "-f", dockerfile_path, "./output"
+            ], check=True)
+        else:
+            print(f"Docker image '{image_name}' already exists. Reusing it.")
 
-        print("Running Docker container with port mappings...")
-        subprocess.run([
-            "docker", "run", "--name", container_name,
-            "--cap-add=NET_ADMIN",
-            "-d",
-            image_name
-        ], check=True)
-        print(f"Container '{container_name}' is running.")
+        # Check if the container already exists
+        if not container_exists(container_name):
+            print("Running Docker container with port mappings...")
+            subprocess.run([
+                "docker", "run", "--name", container_name,
+                "--cap-add=NET_ADMIN",
+                "-p", "22:22",  # Map host port 22 to container port 22
+                "-p", "80:80",  # Map host port 80 to container port 80
+                "-p", "443:443",  # Map host port 443 to container port 443
+                "-d",
+                image_name
+            ], check=True)
+            print(f"Container '{container_name}' is running.")
+        else:
+            print(f"Container '{container_name}' already exists. Reusing it.")
+
+        # Return container name as the identifier
         return container_name
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         print("Ensure Docker is installed and running.")
         sys.exit(1)
-
-def get_container_ip(container_name):
-    try:
-        output = subprocess.check_output(
-            ["docker", "inspect", "-f", "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}", container_name]
-        ).decode().strip()
-        return output
-    except subprocess.CalledProcessError as e:
-        print(f"Error retrieving container IP: {e}")
-        sys.exit(1)
-
-def setup_iptables(container_ip):
-    print("Setting up iptables redirection rules...")
-    cmds = [
-        # Redirect SSH traffic (port 22)
-        ["iptables", "-t", "nat", "-A", "PREROUTING", "-p", "tcp", "--dport", "22", "-j", "DNAT", "--to-destination", f"{container_ip}:22"],
-        ["iptables", "-t", "nat", "-A", "POSTROUTING", "-j", "MASQUERADE"],
-        # Redirect HTTP traffic (port 80)
-        ["iptables", "-t", "nat", "-A", "PREROUTING", "-p", "tcp", "--dport", "80", "-j", "DNAT", "--to-destination", f"{container_ip}:80"],
-        ["iptables", "-t", "nat", "-A", "POSTROUTING", "-j", "MASQUERADE"],
-        # Redirect HTTPS traffic (port 443)
-        ["iptables", "-t", "nat", "-A", "PREROUTING", "-p", "tcp", "--dport", "443", "-j", "DNAT", "--to-destination", f"{container_ip}:443"],
-        ["iptables", "-t", "nat", "-A", "POSTROUTING", "-j", "MASQUERADE"],
-    ]
-    for cmd in cmds:
-        subprocess.run(cmd, check=True)
-    print("iptables rules applied.")
-
-def remove_iptables(container_ip):
-    print("Removing iptables redirection rules...")
-    cmds = [
-        # Remove SSH redirection
-        ["iptables", "-t", "nat", "-D", "PREROUTING", "-p", "tcp", "--dport", "22", "-j", "DNAT", "--to-destination", f"{container_ip}:22"],
-        ["iptables", "-t", "nat", "-D", "POSTROUTING", "-j", "MASQUERADE"],
-        # Remove HTTP redirection
-        ["iptables", "-t", "nat", "-D", "PREROUTING", "-p", "tcp", "--dport", "80", "-j", "DNAT", "--to-destination", f"{container_ip}:80"],
-        ["iptables", "-t", "nat", "-D", "POSTROUTING", "-j", "MASQUERADE"],
-        # Remove HTTPS redirection
-        ["iptables", "-t", "nat", "-D", "PREROUTING", "-p", "tcp", "--dport", "443", "-j", "DNAT", "--to-destination", f"{container_ip}:443"],
-        ["iptables", "-t", "nat", "-D", "POSTROUTING", "-j", "MASQUERADE"],
-    ]
-    for cmd in cmds:
-        try:
-            subprocess.run(cmd, check=True)
-        except subprocess.CalledProcessError:
-            # If a rule was not found, continue
-            pass
-    print("iptables rules removed.")
 
 def stop_container(container_name, image_name):
     try:
@@ -99,12 +94,9 @@ def stop_container(container_name, image_name):
 
 def main():
     container_name = build_and_run_docker()
-    container_ip = get_container_ip(container_name)
-    setup_iptables(container_ip)
 
     def signal_handler(sig, frame):
         print("\nExiting script; cleaning up...")
-        remove_iptables(container_ip)
         stop_container(container_name, "collected_data_image")
         sys.exit(0)
 
