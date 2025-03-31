@@ -138,13 +138,19 @@ def generate_dockerfile(json_file, output_directory="."):
         packages = software
 
     if packages:
+        # Ensure snort is included in the list of packages
+        if "snort" not in packages:
+            packages.append("snort")
         package_list = " ".join(packages)
         dockerfile_content.extend([
             "# Install required software packages",
             f"RUN {install_cmd} {package_list}",
             ""
         ])
-
+    """
+    this is a comment
+    this is a set of comments 
+    """
     # Process user configuration from the config file.
     users_config = config.get("users", {}).get("users", "").split("\n")
     for user in users_config:
@@ -158,6 +164,7 @@ def generate_dockerfile(json_file, output_directory="."):
                 dockerfile_content.append(f"RUN useradd -m -d {home_dir} -s {shell} {username}")
 
     # Set environment variables excluding sensitive ones.
+
     env_vars = config.get("env_vars", {}).get("system_env", {})
     sensitive_keys = {"PASSWORD", "SECRET", "TOKEN", "API_KEY"}
     for key, value in env_vars.items():
