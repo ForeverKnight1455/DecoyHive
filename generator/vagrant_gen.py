@@ -6,7 +6,14 @@ def generate_vagrantfile(config_json):
     box_name_map = {
         "arch": "archlinux/archlinux",
         "ubuntu": "ubuntu/focal64",
-        "debian": "debian/bullseye64"
+        "debian": "debian/bullseye64",
+        "centos": "centos/7",
+        "fedora": "fedora/34-cloud-base",
+        "opensuse": "opensuse/openSUSE-42.3-x86_64",
+        "alpine": "alpine/alpine64",
+        "gentoo": "gentoo/gentoo",
+        "oracle": "oraclelinux/7",
+        "freebsd": "freebsd/FreeBSD-12.1-RELEASE"
     }
 
     config = json.loads(config_json)
@@ -58,8 +65,6 @@ if __name__ == "__main__":
 
     with open(config_file_path, 'r') as file:
         config_json = file.read()
-
-
 
     contents = generate_vagrantfile(config_json)
     with open("Vagrantfile", "w") as file:
