@@ -7,8 +7,7 @@ from utils import (
     get_os_info, get_hardware_info, get_running_services, get_network_info,
     get_user_info, get_filtered_software_from_running_services,
     get_environment_variables, get_cron_jobs, get_log_files,
-    generate_dockerfile, docker_run
-)
+    )
 
 
 def load_config():
@@ -81,8 +80,3 @@ def save_config():
 if __name__ == "__main__":
     # Collect configuration and generate Dockerfile
     save_config()
-    generate_dockerfile(f"{config['export_config_directory']}/config.json",config["output_directory"])
-
-    # Call the docker_run module's main() to build, run, and manage the container lifecycle.
-    # The script will run continuously and upon exit, the container will be stopped and removed.
-    docker_run.main()
