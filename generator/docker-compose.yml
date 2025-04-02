@@ -1,0 +1,15 @@
+
+version: "3.8"
+
+services:
+  snort:
+    image: frapsoft/snort
+    container_name: snort
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - ./snort_config/local.rules:/etc/snort/local.rules
+      - ./snort_config/snort.conf:/etc/snort/snort.conf
+      - ./snort_config/classification.config:/etc/snort/classification.config
+      - ./snort_config/logs:/var/log/snort
+    command: ["-A", "fast", "-q", "-c", "/etc/snort/snort.conf", "-i", "wlan0"]

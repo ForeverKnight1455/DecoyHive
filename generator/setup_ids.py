@@ -1,89 +1,137 @@
 import os
 import subprocess
+import netifaces
 
-# Paths for configuration files
-CONFIG_DIR = "./ids_config"
-SNORT_RULES_PATH = f"{CONFIG_DIR}/snort.rules"
-LOKI_CONFIG_PATH = f"{CONFIG_DIR}/loki-config.yml"
-GRAFANA_DATASOURCE_PATH = f"{CONFIG_DIR}/grafana-datasource.yml"
+# Function to get available network interfaces
+def get_network_interfaces():
+    return netifaces.interfaces()
 
-# Create necessary directories
+# Function to get IP address of the chosen interface
+def get_ip_address(interface):
+    try:
+        return netifaces.ifaddresses(interface)[netifaces.AF_INET][0]['addr']
+    except (KeyError, IndexError):
+        return None
+
+# Ask the user for the network interface
+available_interfaces = get_network_interfaces()
+print("Available network interfaces:", ", ".join(available_interfaces))
+
+while True:
+    interface = input("Enter the network interface to monitor (e.g., eth0, wlan0, lo): ").strip()
+    if interface in available_interfaces:
+        ip_address = get_ip_address(interface)
+        if ip_address:
+            break
+        else:
+            print(f"Error: No IPv4 address found for {interface}. Try another one.")
+    else:
+        print("Invalid interface. Please select from the available ones.")
+
+print(f"Monitoring interface: {interface} (IP: {ip_address})")
+
+# Configuration directory
+CONFIG_DIR = "./snort_config"
+SNORT_RULES_PATH = f"{CONFIG_DIR}/local.rules"
+SNORT_CONFIG_PATH = f"{CONFIG_DIR}/snort.conf"
+SNORT_CLASSIFICATION_PATH = f"{CONFIG_DIR}/classification.config"
+SNORT_LOGS_PATH = f"{CONFIG_DIR}/logs"
+
+# Create configuration directory
 os.makedirs(CONFIG_DIR, exist_ok=True)
+os.makedirs(SNORT_LOGS_PATH, exist_ok=True)
 
-# Snort Rules
-snort_rules = """
-alert icmp any any -> any any (msg:"ICMP Packet detected"; sid:1000001;)
+# Snort Rules for Suspicious Traffic Only
+snort_rules = f"""
+# Nmap Scan Detection
+alert tcp {ip_address} any -> any any (msg:"Nmap SYN Scan detected"; flags:S,12; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000001;)
+alert tcp {ip_address} any -> any any (msg:"Nmap FIN Scan detected"; flags:F; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000002;)
+alert tcp {ip_address} any -> any any (msg:"Nmap NULL Scan detected"; flags:0; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000003;)
+alert tcp {ip_address} any -> any any (msg:"Nmap Xmas Scan detected"; flags:FPU; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000004;)
+alert udp {ip_address} any -> any any (msg:"Nmap UDP Scan detected"; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000005;)
+
+# Port Scanning (Multiple connection attempts)
+alert tcp {ip_address} any -> any any (msg:"Port Scan Detected"; flags:S; threshold:type both, track by_src, count 10, seconds 5; sid:1000006;)
+
+# DoS Attack Detection (High Traffic Rate)
+alert ip {ip_address} any -> any any (msg:"Possible DoS Attack from Host"; flow:to_server; threshold:type threshold, track by_src, count 100, seconds 5; sid:1000007;)
+alert ip any any -> {ip_address} any (msg:"Possible DoS Attack on Host"; flow:to_client; threshold:type threshold, track by_dst, count 100, seconds 5; sid:1000008;)
+
+# Spoofing Detection (Packets with same source & destination IP)
+alert ip {ip_address} any -> {ip_address} any (msg:"Spoofing Attack Detected"; sid:1000009;)
+
+# ICMP Attacks
+alert icmp {ip_address} any -> any any (msg:"ICMP Fragmentation Attack"; fragbits:M+; sid:1000010;)
+alert icmp {ip_address} any -> any any (msg:"ICMP with low TTL"; ttl:<10; sid:1000011;)
+alert icmp {ip_address} any -> any any (msg:"ICMP Ping Flood Attack"; itype:8; threshold:type threshold, track by_src, count 20, seconds 5; sid:1000012;)
+
+# SYN Flood Attack Detection
+alert tcp {ip_address} any -> any any (msg:"SYN Flood Attack Detected"; flags:S; threshold:type threshold, track by_src, count 100, seconds 5; sid:1000013;)
+
+# SSH Brute Force Detection (Multiple failed attempts within 30 seconds)
+alert tcp any any -> {ip_address} 22 (msg:"Possible SSH Brute Force Attack"; flags:S; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000001;)
+
+# HTTP Brute Force Detection (Multiple failed login attempts)
+alert tcp any any -> {ip_address} any (msg:"Possible HTTP Brute Force Attack"; content:"401 Unauthorized"; http_uri; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000002;)
+
+# FTP Brute Force Detection (Multiple failed login attempts)
+alert tcp any any -> {ip_address} 21 (msg:"Possible FTP Brute Force Attack"; content:"530 Login incorrect"; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000003;)
+
+# RDP Brute Force Detection (Repeated failed logins)
+alert tcp any any -> {ip_address} 3389 (msg:"Possible RDP Brute Force Attack"; flags:S; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000004;)
+
+# MySQL Brute Force Detection
+alert tcp any any -> {ip_address} 3306 (msg:"Possible MySQL Brute Force Attack"; content:"Access denied for user"; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000005;)
+
+# Generic Brute Force Detection (Any service with repeated failed logins)
+alert tcp any any -> {ip_address} any (msg:"Possible Brute Force Attack on unknown service"; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000006;)
 """
+
 with open(SNORT_RULES_PATH, "w") as f:
     f.write(snort_rules)
 
-# Loki Configuration
-loki_config = """
-auth_enabled: false
-server:
-  http_listen_port: 3100
-positions:
-  filename: /tmp/positions.yaml
-clients:
-  - url: http://loki:3100/loki/api/v1/push
+# Snort Configuration File (Minimal required setup)
+snort_conf = f"""
+include classification.config
+include local.rules
 """
-with open(LOKI_CONFIG_PATH, "w") as f:
-    f.write(loki_config)
+with open(SNORT_CONFIG_PATH, "w") as f:
+    f.write(snort_conf)
 
-# Grafana Data Source (Loki Integration)
-grafana_datasource = """
-apiVersion: 1
-datasources:
-  - name: Loki
-    type: loki
-    access: proxy
-    url: http://loki:3100
-    isDefault: true
+# Snort Classification Config
+classification_config = """
+config classification: attempted-recon,Attempted Information Leak,2
+config classification: attempted-dos,Attempted Denial of Service,2
+config classification: successful-dos,Denial of Service,1
+config classification: attempted-user,Attempted User Privilege Gain,1
+config classification: spoof-detected,Spoofing Attempt Detected,1
 """
-with open(GRAFANA_DATASOURCE_PATH, "w") as f:
-    f.write(grafana_datasource)
+with open(SNORT_CLASSIFICATION_PATH, "w") as f:
+    f.write(classification_config)
 
-# Docker Compose File
+# Docker Compose File for Snort
 docker_compose_content = f"""
 version: "3.8"
 
 services:
   snort:
-    image: cturra/snort
+    image: frapsoft/snort
     container_name: snort
     restart: unless-stopped
     network_mode: "host"
     volumes:
-      - {SNORT_RULES_PATH}:/etc/snort/rules/local.rules
-    command: ["-A", "fast", "-q", "-c", "/etc/snort/snort.conf", "-i", "eth0"]
-
-  loki:
-    image: grafana/loki:2.8.2
-    container_name: loki
-    ports:
-      - "3100:3100"
-    volumes:
-      - {LOKI_CONFIG_PATH}:/etc/loki/config.yml
-    command: -config.file=/etc/loki/config.yml
-    restart: unless-stopped
-
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    volumes:
-      - {GRAFANA_DATASOURCE_PATH}:/etc/grafana/provisioning/datasources/datasource.yml
-    restart: unless-stopped
+      - {SNORT_RULES_PATH}:/etc/snort/local.rules
+      - {SNORT_CONFIG_PATH}:/etc/snort/snort.conf
+      - {SNORT_CLASSIFICATION_PATH}:/etc/snort/classification.config
+      - {SNORT_LOGS_PATH}:/var/log/snort
+    command: ["-A", "fast", "-q", "-c", "/etc/snort/snort.conf", "-i", "{interface}"]
 """
 
 with open("docker-compose.yml", "w") as f:
     f.write(docker_compose_content)
 
-# Start Docker containers
-print("Starting IDS system...")
-subprocess.run(["docker", "compose", "up", "-d"], check=True)
+# Start Docker container
+print(f"Starting Snort IDS system on interface {interface} (IP: {ip_address})...")
+subprocess.run(["docker", "compose", "up"], check=True)
 
-print("IDS system is now running with Snort, Loki, and Grafana.")
+print("Snort IDS is now running.")
