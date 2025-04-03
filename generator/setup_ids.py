@@ -1,7 +1,7 @@
 import os
 import subprocess
 import netifaces
-
+import json
 # Function to get available network interfaces
 def get_network_interfaces():
     return netifaces.interfaces()
@@ -17,17 +17,25 @@ def get_ip_address(interface):
 available_interfaces = get_network_interfaces()
 print("Available network interfaces:", ", ".join(available_interfaces))
 
-while True:
-    interface = input("Enter the network interface to monitor (e.g., eth0, wlan0, lo): ").strip()
-    if interface in available_interfaces:
-        ip_address = get_ip_address(interface)
-        if ip_address:
-            break
-        else:
-            print(f"Error: No IPv4 address found for {interface}. Try another one.")
-    else:
-        print("Invalid interface. Please select from the available ones.")
+# read default_interface from config.json
+with open('./config.json', 'r') as f:
+    config = json.load(f)
+interface = config.get('default_interface', None)
 
+
+if interface is None:
+    while True:
+        interface = input("Enter the network interface to monitor (e.g., eth0, wlan0, lo): ").strip()
+        if interface in available_interfaces:
+            ip_address = get_ip_address(interface)
+            if ip_address:
+                break
+            else:
+                print(f"Error: No IPv4 address found for {interface}. Try another one.")
+        else:
+            print("Invalid interface. Please select from the available ones.")
+else:
+    ip_address  = get_ip_address(interface)
 print(f"Monitoring interface: {interface} (IP: {ip_address})")
 
 # Configuration directory
@@ -43,48 +51,45 @@ os.makedirs(SNORT_LOGS_PATH, exist_ok=True)
 
 # Snort Rules for Suspicious Traffic Only
 snort_rules = f"""
-# Nmap Scan Detection
-alert tcp {ip_address} any -> any any (msg:"Nmap SYN Scan detected"; flags:S,12; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000001;)
-alert tcp {ip_address} any -> any any (msg:"Nmap FIN Scan detected"; flags:F; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000002;)
-alert tcp {ip_address} any -> any any (msg:"Nmap NULL Scan detected"; flags:0; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000003;)
-alert tcp {ip_address} any -> any any (msg:"Nmap Xmas Scan detected"; flags:FPU; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000004;)
-alert udp {ip_address} any -> any any (msg:"Nmap UDP Scan detected"; threshold:type threshold, track by_src, count 5, seconds 10; sid:1000005;)
+# Nmap Scan Detection (Require More Attempts)
+alert tcp {ip_address} any -> any any (msg:"Nmap SYN Scan detected"; flags:S,12; threshold:type threshold, track by_src, count 10, seconds 20; sid:1000001;)
+alert tcp {ip_address} any -> any any (msg:"Nmap FIN Scan detected"; flags:F; threshold:type threshold, track by_src, count 10, seconds 20; sid:1000002;)
+alert tcp {ip_address} any -> any any (msg:"Nmap NULL Scan detected"; flags:0; threshold:type threshold, track by_src, count 10, seconds 20; sid:1000003;)
+alert tcp {ip_address} any -> any any (msg:"Nmap Xmas Scan detected"; flags:FPU; threshold:type threshold, track by_src, count 10, seconds 20; sid:1000004;)
+alert udp {ip_address} any -> any any (msg:"Nmap UDP Scan detected"; threshold:type threshold, track by_src, count 10, seconds 20; sid:1000005;)
 
-# Port Scanning (Multiple connection attempts)
-alert tcp {ip_address} any -> any any (msg:"Port Scan Detected"; flags:S; threshold:type both, track by_src, count 10, seconds 5; sid:1000006;)
+# Port Scanning (Increase Count & Time Window)
+alert tcp {ip_address} any -> any any (msg:"Port Scan Detected"; flags:S; threshold:type both, track by_src, count 15, seconds 10; sid:1000006;)
 
-# DoS Attack Detection (High Traffic Rate)
-alert ip {ip_address} any -> any any (msg:"Possible DoS Attack from Host"; flow:to_server; threshold:type threshold, track by_src, count 100, seconds 5; sid:1000007;)
-alert ip any any -> {ip_address} any (msg:"Possible DoS Attack on Host"; flow:to_client; threshold:type threshold, track by_dst, count 100, seconds 5; sid:1000008;)
+# DoS Attack Detection (Higher Threshold)
+alert ip any any -> {ip_address} any (msg:"Possible DoS Attack on Host"; flow:to_client; threshold:type threshold, track by_dst, count 200, seconds 10; sid:1000008;)
 
-# Spoofing Detection (Packets with same source & destination IP)
+# Spoofing Detection (No Change)
 alert ip {ip_address} any -> {ip_address} any (msg:"Spoofing Attack Detected"; sid:1000009;)
 
-# ICMP Attacks
+# ICMP Attacks (Relax Thresholds)
 alert icmp {ip_address} any -> any any (msg:"ICMP Fragmentation Attack"; fragbits:M+; sid:1000010;)
-alert icmp {ip_address} any -> any any (msg:"ICMP with low TTL"; ttl:<10; sid:1000011;)
-alert icmp {ip_address} any -> any any (msg:"ICMP Ping Flood Attack"; itype:8; threshold:type threshold, track by_src, count 20, seconds 5; sid:1000012;)
+alert icmp {ip_address} any -> any any (msg:"ICMP with low TTL"; ttl:<5; sid:1000011;)
+alert icmp {ip_address} any -> any any (msg:"ICMP Ping Flood Attack"; itype:8; threshold:type threshold, track by_src, count 50, seconds 10; sid:1000012;)
 
-# SYN Flood Attack Detection
-alert tcp {ip_address} any -> any any (msg:"SYN Flood Attack Detected"; flags:S; threshold:type threshold, track by_src, count 100, seconds 5; sid:1000013;)
+# SYN Flood Attack Detection (Higher Count)
+alert tcp {ip_address} any -> any any (msg:"SYN Flood Attack Detected"; flags:S; threshold:type threshold, track by_src, count 200, seconds 10; sid:1000013;)
 
-# SSH Brute Force Detection (Multiple failed attempts within 30 seconds)
-alert tcp any any -> {ip_address} 22 (msg:"Possible SSH Brute Force Attack"; flags:S; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000001;)
+# SSH Brute Force Detection (Require More Attempts)
+alert tcp any any -> {ip_address} 22 (msg:"Possible SSH Brute Force Attack"; flags:S; threshold:type threshold, track by_src, count 10, seconds 60; sid:2000001;)
 
-# HTTP Brute Force Detection (Multiple failed login attempts)
-alert tcp any any -> {ip_address} any (msg:"Possible HTTP Brute Force Attack"; content:"401 Unauthorized"; http_uri; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000002;)
+# HTTP Brute Force Detection (Increase Time Window)
+alert tcp any any -> {ip_address} any (msg:"Possible HTTP Brute Force Attack"; content:"401 Unauthorized"; http_uri; threshold:type threshold, track by_src, count 10, seconds 60; sid:2000002;)
 
-# FTP Brute Force Detection (Multiple failed login attempts)
-alert tcp any any -> {ip_address} 21 (msg:"Possible FTP Brute Force Attack"; content:"530 Login incorrect"; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000003;)
+# FTP Brute Force Detection (Relax Detection)
+alert tcp any any -> {ip_address} 21 (msg:"Possible FTP Brute Force Attack"; content:"530 Login incorrect"; threshold:type threshold, track by_src, count 10, seconds 60; sid:2000003;)
 
-# RDP Brute Force Detection (Repeated failed logins)
-alert tcp any any -> {ip_address} 3389 (msg:"Possible RDP Brute Force Attack"; flags:S; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000004;)
+# RDP Brute Force Detection (Higher Threshold)
+alert tcp any any -> {ip_address} 3389 (msg:"Possible RDP Brute Force Attack"; flags:S; threshold:type threshold, track by_src, count 10, seconds 60; sid:2000004;)
 
-# MySQL Brute Force Detection
-alert tcp any any -> {ip_address} 3306 (msg:"Possible MySQL Brute Force Attack"; content:"Access denied for user"; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000005;)
+# MySQL Brute Force Detection (Require More Attempts)
+alert tcp any any -> {ip_address} 3306 (msg:"Possible MySQL Brute Force Attack"; content:"Access denied for user"; threshold:type threshold, track by_src, count 10, seconds 60; sid:2000005;)
 
-# Generic Brute Force Detection (Any service with repeated failed logins)
-alert tcp any any -> {ip_address} any (msg:"Possible Brute Force Attack on unknown service"; threshold:type threshold, track by_src, count 5, seconds 30; sid:2000006;)
 """
 
 with open(SNORT_RULES_PATH, "w") as f:

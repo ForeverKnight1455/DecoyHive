@@ -31,8 +31,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "{box_name}"
 
     # Shared network with the host
-    config.vm.network "public_network", bridge: "enp0s3", use_dhcp_assigned_default_route: true
-
+    config.vm.network "private_network", type: "dhcp"
     config.vm.provider "virtualbox" do |vb|
         vb.customize ["modifyvm", :id, "--cpus", {actual_cpu_cores}]
         vb.customize ["modifyvm", :id, "--memory", {actual_memory_mb}]
@@ -55,13 +54,8 @@ end
 
 if __name__ == "__main__":
     print("""Provide path to the configuration file eg. python3 vagrant_gen.py /path/to/config.json""")
-
-    try :
-        config_file_path = sys.argv[1]
-        print(config_file_path)
-    except IndexError:
-        print("Please provide path to config file")
-        exit()
+    config_file_path = sys.argv[1]
+    print(config_file_path)
 
     with open(config_file_path, 'r') as file:
         config_json = file.read()
@@ -69,3 +63,4 @@ if __name__ == "__main__":
     contents = generate_vagrantfile(config_json)
     with open("Vagrantfile", "w") as file:
         file.write(contents)
+    print("Vagrantfile generated successfully!")
