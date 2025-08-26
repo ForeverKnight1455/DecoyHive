@@ -88,9 +88,9 @@ DecoyHive/
 ## Roadmap
 
 - [x] System analysis module
+- [x] IDS integration for real-time monitoring
+- [x] VM-based honeypot support
 - [ ] Honeypot deployment using Docker
-- [ ] IDS integration for real-time monitoring
-- [ ] VM-based honeypot support
 
 ## Contributing
 
