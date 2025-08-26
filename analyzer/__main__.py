@@ -78,5 +78,5 @@ def save_config():
         json.dump(config_data, f, indent=2)
 
 if __name__ == "__main__":
-    # Collect configuration and generate Dockerfile
+    # Collect configuration
     save_config()

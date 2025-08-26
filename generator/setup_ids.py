@@ -119,16 +119,16 @@ docker_compose_content = f"""
 version: "3.8"
 
 services:
-  snort:
+    snort:
     image: frapsoft/snort
     container_name: snort
     restart: unless-stopped
     network_mode: "host"
     volumes:
-      - {SNORT_RULES_PATH}:/etc/snort/local.rules
-      - {SNORT_CONFIG_PATH}:/etc/snort/snort.conf
-      - {SNORT_CLASSIFICATION_PATH}:/etc/snort/classification.config
-      - {SNORT_LOGS_PATH}:/var/log/snort
+        - {SNORT_RULES_PATH}:/etc/snort/local.rules
+        - {SNORT_CONFIG_PATH}:/etc/snort/snort.conf
+        - {SNORT_CLASSIFICATION_PATH}:/etc/snort/classification.config
+        - {SNORT_LOGS_PATH}:/var/log/snort
     command: ["-A", "fast", "-q", "-c", "/etc/snort/snort.conf", "-i", "{interface}"]
 """
 

@@ -6,34 +6,69 @@ DecoyHive is a honeypot generator toolkit designed to analyze a target system an
 2. **Generator** – Uses the generated configuration file to create a decoy environment that mimics the target system, helping detect and divert unauthorized access attempts.
 
 ## Features
+
 - **System Analysis:** Extracts key system details, including OS information, network configuration, and active services.
 - **Config-based Cloning:** Uses an automatically generated config file to create an accurate honeypot environment.
 - **Containerized & VM Support:** Initial implementation focuses on Docker/Kubernetes-based deployment, with potential expansion to VM-based replication.
 - **Intrusion Response:** Can integrate with IDS to automatically switch traffic to the honeypot upon detecting suspicious activity.
 
 ## Installation
+
 ### Prerequisites
+
 - Python 3.11+
 - Docker (for containerized honeypot deployment)
 - Root privileges (for system analysis and network scanning)
 
 ### Clone the Repository
+
 ```sh
 git clone https://github.com/ForeverKnight1455/DecoyHive.git
 cd DecoyHive
 ```
 
-
 ## Usage
+
 ### Running the Analyzer
+
 The analyzer extracts system details and generates a configuration file.
+
 ```sh
 python analyzer/__main__.py
 ```
+
 This will create `config_exports/config.json`, which is used for generating the honeypot.
 
+### Vagrant Setup (Linux VM)
+
+DecoyHive supports deploying honeypot environments using Vagrant for VM-based replication and testing, specifically targeting Linux systems.
+
+#### Prerequisites
+
+- [Vagrant](https://www.vagrantup.com/downloads)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or another supported provider
+
+#### Steps
+
+1. Edit the `Vagrantfile` and related configuration files in the `generator/` directory to specify your desired Linux distribution and settings.
+2. Initialize and start the Vagrant environment:
+   ```sh
+   vagrant up
+   ```
+3. To access the Linux VM:
+   ```sh
+   vagrant ssh
+   ```
+4. To halt or destroy the VM:
+   ```sh
+   vagrant halt
+   vagrant destroy
+   ```
+
+The Vagrant setup will provision a Linux virtual machine based on the generated configuration, allowing you to test and monitor honeypot deployments in a controlled environment.
 
 ## Project Structure
+
 ```
 DecoyHive/
 ├── analyzer/            # System analysis component
@@ -51,13 +86,16 @@ DecoyHive/
 ```
 
 ## Roadmap
+
 - [x] System analysis module
 - [ ] Honeypot deployment using Docker
 - [ ] IDS integration for real-time monitoring
 - [ ] VM-based honeypot support
 
 ## Contributing
+
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ## License
+
 This project is licensed under the MIT License.

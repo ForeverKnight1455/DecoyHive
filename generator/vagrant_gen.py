@@ -13,7 +13,9 @@ def generate_vagrantfile(config_json):
         "alpine": "alpine/alpine64",
         "gentoo": "gentoo/gentoo",
         "oracle": "oraclelinux/7",
-        "freebsd": "freebsd/FreeBSD-12.1-RELEASE"
+        "freebsd": "freebsd/FreeBSD-12.1-RELEASE",
+        "windows 10":"gusztavvargadr/windows-10",
+        "windows 11":"gusztavvargadr/windows-11"
     }
 
     config = json.loads(config_json)
