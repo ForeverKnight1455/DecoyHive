@@ -3,3 +3,7 @@ __pycache__
 Dockerfile
 output/
 logs/
+.vagrant
+.ropeproject
+ids_config/
+snort_config/
